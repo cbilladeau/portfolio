@@ -1,0 +1,54 @@
+@charset 'UTF-8'
+
+$color-pack = false
+
+@import '~vuetify/src/stylus/main'
+
+.application {
+    font-family: 'Raleway', sans-serif
+
+    .headline, .body-2 {
+        font-family: 'Montserrat', sans-serif
+    }
+
+    #hero {
+        .parallax {
+            height: 100vh !important
+        
+            .parallax__content {
+                color: rgba(0,0,0,0.87)
+                padding-bottom: 2rem
+            }
+        }
+    }
+    
+    #intro {
+        background-color: rgb(155,155,155)
+        padding: 6rem 0 14rem
+    }
+    
+    #skills {
+        align-items: stretch
+        margin-top: -10rem
+        padding-bottom: 4rem
+        
+        .card {
+            height: 100% !important
+            padding: 2rem 1.5rem
+        
+            .skill-icon {
+                height: 72px
+                fill: rgba(0,0,0,0.56)
+                margin-bottom: 1rem
+            }
+        }
+    }
+    
+    #about {
+        align-items: stretch
+        
+        .parallax {
+            height: 100% !important
+        }
+    }
+}

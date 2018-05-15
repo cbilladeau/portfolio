@@ -1,120 +1,235 @@
 <template>
-    <v-app>
-        <v-navigation-drawer
-            fixed
-            :mini-variant="miniVariant"
-            :clipped="clipped"
-            v-model="drawer"
-            app
-        >
-            <v-list>
-                <v-list-tile 
-                    value="true"
-                    v-for="(item, i) in items"
-                    :key="i"
-                >
-                    <v-list-tile-action>
-                        <v-icon v-html="item.icon"></v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title v-text="item.title"></v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
-        <v-toolbar fixed app :clipped-left="clipped">
-            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-btn icon @click.stop="miniVariant = !miniVariant">
-                <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-            </v-btn>
-            <v-btn icon @click.stop="clipped = !clipped">
-                <v-icon>web</v-icon>
-            </v-btn>
-            <v-btn icon @click.stop="fixed = !fixed">
-                <v-icon>remove</v-icon>
-            </v-btn>
+    <v-app light>
+        <v-toolbar fixed class="elevation-6">
             <v-toolbar-title v-text="title"></v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-                <v-icon>menu</v-icon>
-            </v-btn>
+            <v-toolbar-items>
+                    <v-btn flat @click="$vuetify.goTo(target, options)">Works</v-btn>
+                    <v-btn flat>About</v-btn>
+                    <v-btn flat>Contact</v-btn>
+                </v-toolbar-items>
         </v-toolbar>
         <v-content>
-            <v-container fluid>
-                <v-slide-y-transition mode="out-in">
-                    <section>
-                        <v-parallax src="/public/hero.jpg">
-                            <v-layout column align-center justify-center>
-                                <img src="/public/v.png" alt="Vuetify.js" class="mb-5" />
-                                <blockquote>
-                                    &#8220;First, solve the problem. Then, write the code.&#8221;
-                                    <footer>
-                                        <small>
-                                            <em>&mdash;John Johnson</em>
-                                        </small>
-                                    </footer>
-                                </blockquote>
-                            </v-layout>
-                        </v-parallax>
-                    </section>
-                    <section>
-                        <v-container fluid grid-list-md>
-                            <v-layout row align-center>
-                                <v-flex v-for="i in 3" :key="`4${i}`" xs4>
-                                    <v-card dark color="primary">
-                                        <v-card-text class="px-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo vitae enim et hendrerit. Sed lorem augue, congue at porttitor eu, auctor at ipsum. Morbi iaculis, massa eget posuere luctus, purus augue hendrerit tortor, ut ornare nibh risus sit amet ex. Nulla vulputate ultrices nunc, sed commodo ante finibus sed. Donec ac varius turpis, a volutpat ex. Nullam rhoncus vel est quis blandit. Maecenas rhoncus tristique nisl vel dictum. Cras id volutpat leo. Etiam bibendum neque nisi. Duis in lectus vel neque hendrerit pellentesque.
+
+            <section id="hero">
+                <v-parallax src="public/hero.jpg">
+                    <v-layout
+                        column
+                        align-center
+                        justify-center
+                    >
+                        <img src="public/v.png" alt="Vuetify.js">
+                        <h1 class="display-3 mb-2 text-xs-center">UI Designer & Frontend Developer</h1>
+                        <div class="display-1 mb-3 text-xs-center">Design, Code & Everything In Between</div>
+                    </v-layout>
+                </v-parallax>
+            </section>
+
+            <section id="intro">
+                <v-layout column align-center>
+                    <v-flex xs12 sm4>
+                        <div class="text-xs-center">
+                            <h2 class="headline">Hi, I'm Cour!</h2>
+                            <span class="subheading">
+                                I'm making & breaking stuff in Chicago, IL.
+                            </span>
+                        </div>
+                    </v-flex>
+                </v-layout>
+            </section>
+
+            <section id="skills">
+                <v-layout column align-center>
+                    <v-flex xs12>
+                        <v-container grid-list-xl name="skills">
+                            <v-layout row wrap>
+                                <v-flex xs12 md4>
+                                    <v-card class="elevation-4">
+                                        <v-card-title primary-title class="layout justify-center">
+                                            <div class="text-xs-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
+                                                </svg>
+                                                <h3 class="headline">Frontend Development</h3>
+                                                <div class="subheading">I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-text>
+                                            <div class="title">Languages</div>
+                                            <div>HTML5, CSS, Sass, Less, Stylus, JS, jQuery, VueJS, PHP</div>
                                         </v-card-text>
-                                        <v-card-text class="px-0">
-                                            Nam pellentesque convallis risus fringilla rutrum. Donec condimentum justo eu rhoncus sagittis. Phasellus vulputate, ante nec accumsan volutpat, erat mauris ornare elit, ut lacinia nulla lorem vitae lectus. Etiam faucibus faucibus interdum. Morbi augue ante, tincidunt eu mauris non, lobortis dapibus mi. Ut eu dolor eu dolor venenatis feugiat. Etiam interdum porttitor urna, et accumsan ante dapibus sit amet.
+                                        <v-card-text>
+                                            <div class="title">CMS & Frameworks</div>
+                                            <div>Wordpress, Bootstrap, Material Design</div>
                                         </v-card-text>
-                                        <v-card-text class="px-0">
-                                            Quisque varius auctor tortor at vestibulum. Vivamus finibus gravida magna, ac hendrerit purus posuere ac. Vivamus dignissim ipsum a neque auctor tincidunt. Nullam eu libero eget dui congue porttitor. Sed pellentesque mauris vel nunc bibendum pretium. Nulla non ante in tortor mattis faucibus ac in velit. Cras a tempus erat. Curabitur sed mattis augue, et auctor lorem. Etiam non ipsum porta, cursus massa ut, vestibulum dui. Pellentesque suscipit non mi vel lobortis. Sed id fermentum turpis. Nam lacinia consequat consectetur. Donec elementum facilisis purus, at laoreet quam.
+                                        <v-card-text>
+                                            <div class="title">Tools</div>
+                                            <div>WGAC/W3C, Git, Github, Terminal, Homebrew, npm & Yarn, Grunt & Gulp, Webpack & Encore, Agile Development, JIRA, Confluence</div>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-flex>
+                                <v-flex xs12 md4>
+                                    <v-card class="elevation-4">
+                                        <v-card-title primary-title class="layout justify-center">
+                                            <div class="text-xs-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
+                                                </svg>
+                                                <h3 class="headline">UI Design</h3>
+                                                <div class="subheading">I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-text>
+                                            <div class="title">Design</div>
+                                            <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
+                                        </v-card-text>
+                                        <v-card-text>
+                                            <div class="title">Tools</div>
+                                            <div>UXPin, Axure, Photoshop, Illustrator, InDesign</div>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-flex>
+                                <v-flex xs12 md4>
+                                    <v-card class="elevation-4">
+                                        <v-card-title primary-title class="layout justify-center">
+                                            <div class="text-xs-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
+                                                </svg>
+                                                <h3 class="headline">Game Development</h3>
+                                                <div class="subheading">I'm an <a href="http://billet-deaux.com/" target="_blank" ref="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-text>
+                                            <div class="title">Design</div>
+                                            <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
+                                        </v-card-text>
+                                        <v-card-text>
+                                            <div class="title">Languages & Tools</div>
+                                            <div>JS, Unity, Ink, Twine</div>
                                         </v-card-text>
                                     </v-card>
                                 </v-flex>
                             </v-layout>
                         </v-container>
-                    </section>
-                </v-slide-y-transition>
-            </v-container>
+                    </v-flex>
+                </v-layout>
+            </section>
+
+            <section id="about">
+                <v-parallax src="public/hero.jpg">
+                    <v-container name="about">
+                        <v-layout row class="my-5">
+                            <v-flex xs12>
+                                <v-card class="elevation-4">
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="text-xs-center">
+                                            <h2 class="headline">About</h2>
+                                            <em>Kick-start your application today</em>
+                                        </div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        <div class="title">Design</div>
+                                        <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                </v-parallax>
+            </section>
+
+            <section id="works">
+                <v-container grid-list-xl>
+                    <v-layout row wrap justify-center class="my-5">
+                        <v-flex xs12 sm4>
+                            <v-card class="elevation-0 transparent">
+                                <v-card-title primary-title class="layout justify-center">
+                                    <div class="headline">Company info</div>
+                                </v-card-title>
+                                <v-card-text>
+                                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. 
+                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                                    Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti. 
+                                </v-card-text>
+                            </v-card>
+                        </v-flex>
+                        <v-flex xs12 sm4 offset-sm1>
+                            <v-card class="elevation-0 transparent">
+                                <v-card-title primary-title class="layout justify-center">
+                                    <div class="headline">Contact us</div>
+                                </v-card-title>
+                                <v-card-text>
+                                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                </v-card-text>
+                                <v-list class="transparent">
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-icon class="text--lighten-2">phone</v-icon>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>777-867-5309</v-list-tile-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-icon class="text--lighten-2">place</v-icon>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>Chicago, US</v-list-tile-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-icon class="text--lighten-2">email</v-icon>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>john@vuetifyjs.com</v-list-tile-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                </v-list>
+                            </v-card>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </section>
+
+            <v-footer>
+                <v-layout row wrap align-center>
+                    <v-flex xs12>
+                        <div class="ml-3">
+                            Made with <a href="https://vuejs.org" target="_blank">VueJS</a> & <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
+                        </div>
+                    </v-flex>
+                </v-layout>
+            </v-footer>
         </v-content>
-        <v-navigation-drawer
-            temporary
-            :right="right"
-            v-model="rightDrawer"
-            fixed
-        >
-            <v-list>
-                <v-list-tile @click.native="right = !right">
-                    <v-list-tile-action>
-                        <v-icon>compare_arrows</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
-        <v-footer :fixed="fixed" app>
-            <span>&copy; 2018</span>
-        </v-footer>
     </v-app>
 </template>
 
 <script>
+    import * as easings from 'vuetify/es5/util/easing-patterns'
+
     export default {
         data () {
             return {
-                clipped: false,
-                drawer: false,
-                fixed: false,
-                items: [
-                    { icon: 'bubble_chart', title: 'Inspire' }
-                ],
-                miniVariant: false,
-                right: true,
-                rightDrawer: false,
-                title: 'c.billadeau'
+                title: 'c.billadeau',
+                type: 'selector',
+                selector: '#skills',
+                easings: Object.keys(easings)
+              }
+            },
+            computed: {
+              target () {
+                return this[this.type]
+              },
+              options () {
+                return {
+                  duration: 600,
+                  offset: 200,
+                  easing: 'easeInOutCubic'
+                }
+              },
             }
-        }
-    }
+          }
 </script>
