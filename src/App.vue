@@ -122,15 +122,50 @@
                         <v-layout row class="my-5">
                             <v-flex xs12>
                                 <v-card class="elevation-4">
-                                    <v-card-title primary-title class="layout justify-center">
+                                    <v-card-title primary-title class="layout justify-center py-5">
                                         <div class="text-xs-center">
                                             <h2 class="headline">About</h2>
-                                            <em>Kick-start your application today</em>
+                                            <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit</em>
                                         </div>
                                     </v-card-title>
                                     <v-card-text>
-                                        <div class="title">Design</div>
-                                        <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
+                                        <v-container grid-list-lg>
+                                            <v-layout row class="py-3">
+                                                <v-flex xs6 class="text-xs-center">
+                                                    <img src="public/v.png" alt="Vuetify.js">
+                                                    <h4 class="headline">owo who's this?</h4>
+                                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet nunc vel lacus elementum molestie sit amet sed elit.</div>
+                                                </v-flex>
+                                                <v-flex xs6 class="mx-auto">
+                                                    <bar-chart style="max-height: 250px;"></bar-chart>
+                                                </v-flex>
+                                            </v-layout>
+                                            <v-layout row class="py-3">
+                                                <v-flex xs3 class="text-xs-center">
+                                                    <h4 class="headline">Part Designer</h4>
+                                                    <ul>
+                                                        <li>UX design</li>
+                                                        <li>UI design</li>
+                                                        <li>Interaction design</li>
+                                                        <li>Research</li>
+                                                        <li>Making it 'pop'</li>
+                                                    </ul>
+                                                </v-flex>
+                                                <v-flex xs6>
+                                                    <pie-chart></pie-chart>
+                                                </v-flex>
+                                                <v-flex xs3 class="text-xs-center">
+                                                    <h4 class="headline">Part Coder</h4>
+                                                    <ul>
+                                                        <li>Frontend development</li>
+                                                        <li>HTML / CSS</li>
+                                                        <li>JavaScript</li>
+                                                        <li>Eating pizza</li>
+                                                        <li>Swearing at computer</li>
+                                                    </ul>
+                                                </v-flex>
+                                            </v-layout>
+                                        </v-container>
                                     </v-card-text>
                                 </v-card>
                             </v-flex>
@@ -209,27 +244,35 @@
 
 <script>
     import * as easings from 'vuetify/es5/util/easing-patterns'
+    import PieChart from './assets/PieChart.js'
+    import BarChart from './assets/BarChart.js'
+    require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
 
     export default {
+        name: 'app',
+        components: {
+            PieChart,
+            BarChart
+        },
         data () {
             return {
                 title: 'c.billadeau',
                 type: 'selector',
                 selector: '#skills',
-                easings: Object.keys(easings)
-              }
-            },
-            computed: {
-              target () {
-                return this[this.type]
-              },
-              options () {
-                return {
-                  duration: 600,
-                  offset: 200,
-                  easing: 'easeInOutCubic'
-                }
-              },
+                easings: Object.keys(easings),
             }
-          }
+        },
+        computed: {
+            target () {
+                return this[this.type]
+            },
+            options () {
+                return {
+                    duration: 600,
+                    offset: 200,
+                    easing: 'easeInOutCubic'
+                }
+            },
+        }
+    }
 </script>

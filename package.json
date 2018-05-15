@@ -9,7 +9,10 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "chart.js": "^2.7.2",
+    "chartjs-plugin-datalabels": "^0.3.0",
     "vue": "^2.5.3",
+    "vue-chartjs": "^3.3.1",
     "vuetify": "^1.0.0"
   },
   "devDependencies": {
