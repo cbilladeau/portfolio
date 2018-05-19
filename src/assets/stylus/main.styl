@@ -4,26 +4,96 @@ $color-pack = false
 
 @import '~vuetify/src/stylus/main'
 
-.application {
-    font-family: 'Raleway', sans-serif
+// Variables
 
-    .headline, .body-2 {
-        font-family: 'Montserrat', sans-serif
-    }
+body-font = 'Roboto'
+header-font = 'Unica One'
 
-    #hero {
-        .parallax {
-            height: 100vh !important
+dark-color-primary = rgba(0,0,0,0.87)
+dark-color-secondary = rgba(0,0,0,0.56)
+dark-color-tertiary = rgba(0,0,0,0.34)
+dark-color-border = rgba(0,0,0,0.12)
+
+light-color-primary = rgba(255,255,255,1)
+light-color-secondary = rgba(255,255,255,0.7)
+light-color-tertiary = rgba(255,255,255,0.5)
+light-color-border = rgba(255,255,255,0.3)
+
+color-white = rgb(255,255,255)
+
+color-primary = rgb(42,27,61)
+color-secondary = rgb(68,49,141)
+color-tertiary = rgb(130,101,167)
+
+color-accent-1 = rgb(216,63,135)
+color-accent-2 = rgb(233,128,116)
+
+
+
+// Styling
+
+body {
+    font-family: body-font, sans-serif
+    
+    a {
+        color: color-accent-1
+        text-decoration: none
         
-            .parallax__content {
-                color: rgba(0,0,0,0.87)
-                padding-bottom: 2rem
+        &:hover,
+        &:focus,
+        &:active {
+            color: color-accent-2
+        }
+    }
+    
+    .header-type {
+        font-family: header-font, sans-serif
+        color: dark-color-secondary
+        text-transform: uppercase
+        
+        &.light {
+            color: light-color-secondary
+        }
+    }
+}
+
+.application {
+    #hero {
+        background-color: color-primary
+        height: 800px
+        overflow: hidden
+        position: relative
+        
+        .layer {
+            background-position: bottom center
+            background-size: auto
+            background-repeat: no-repeat
+            width: 100%
+            height: 800px
+            position: fixed
+            z-index: -1
+              
+            &-01 {
+                background-image: url('/public/ilu_bg.jpg')
+            }
+            &-02 {
+                background-image: url('/public/ilu_03.png')
+            }
+            &-03 {
+                background-image: url('/public/ilu_02.png')
+            }
+            &-04 {
+                background-image: url('/public/ilu_01.png')
+            }
+            &-05 {
+                background-image: url('/public/ilu_man.png')
             }
         }
     }
     
     #intro {
-        background-color: rgb(155,155,155)
+        background: color-accent-1
+        color: light-color-primary
         padding: 6rem 0 14rem
     }
     
@@ -38,13 +108,14 @@ $color-pack = false
         
             .skill-icon {
                 height: 72px
-                fill: rgba(0,0,0,0.56)
+                fill: color-tertiary
                 margin-bottom: 1rem
             }
         }
     }
     
     #about {
+        background: color-secondary
         align-items: stretch
         
         .parallax {

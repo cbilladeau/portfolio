@@ -9,7 +9,7 @@ export default {
         this.renderChart({
             labels: ['HTML5', 'CSS', 'Javascript', 'PHP', 'UI Design', 'Photoshop', 'Illustrator'],
             datasets: [{
-                backgroundColor: 'rgba(96,144,137,0.7)',
+                backgroundColor: 'rgba(154,29,45,0.7)',
                 data: [90, 90, 50, 30, 70, 90, 60],
                 datalabels: {
                     display: false
@@ -24,7 +24,7 @@ export default {
                     anchor: 'end',
                     color: 'rgba(0,0,0,0.56)',
                     font: {
-                        family: 'Montserrat',
+                        family: 'Lato',
                         weight: '600',
                         size: 14
                     },
@@ -48,8 +48,8 @@ export default {
                     stacked: true,
                     ticks: {
                         mirror: true,
-                        fontColor: 'rgba(0,0,0,1)',
-                        fontFamily: 'Raleway',
+                        fontColor: 'rgba(255,255,255,1)',
+                        fontFamily: 'Lato',
                         fontStyle: 'bold',
                         fontSize: 14,
                         padding: -15

@@ -6,7 +6,7 @@ export default {
         this.renderChart({
             labels: ['Designing', 'Programming', 'Sleeping', 'Gaming', 'Boxing'],
             datasets: [{
-                backgroundColor: ['#490A3D', '#BD1550', '#E97F02', '#F8CA00', '#8A9B0F'],
+                backgroundColor: ['#26142E', '#411F2F', '#611C2E', '#9A1D2D', '#C53827'],
                 data: [30, 30, 20, 10, 10],
                 datalabels: {
                     display: false
