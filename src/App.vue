@@ -164,12 +164,27 @@
             </section>
 
             <section id="works">
+                <v-container>
+                    <v-layout row class="my-5">
+                        <v-flex xs12>
+                            <div class="text-xs-center">
+                                <h2 class="header-type light display-1">Works</h2>
+                                <em class="subheading">
+                                    Cras facilisis mi vitae nunc lobortis pharetra 
+                                </em>
+                            </div>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </section>
+
+            <section id="contact">
                 <v-container grid-list-xl>
                     <v-layout row wrap justify-center class="my-5">
                         <v-flex xs12 sm4>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
-                                    <div class="headline">Company info</div>
+                                    <div class="headline">About</div>
                                 </v-card-title>
                                 <v-card-text>
                                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. 
@@ -181,7 +196,7 @@
                         <v-flex xs12 sm4 offset-sm1>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
-                                    <div class="headline">Contact us</div>
+                                    <div class="headline">Contact</div>
                                 </v-card-title>
                                 <v-card-text>
                                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
@@ -192,15 +207,7 @@
                                             <v-icon class="text--lighten-2">phone</v-icon>
                                         </v-list-tile-action>
                                         <v-list-tile-content>
-                                            <v-list-tile-title>777-867-5309</v-list-tile-title>
-                                        </v-list-tile-content>
-                                    </v-list-tile>
-                                    <v-list-tile>
-                                        <v-list-tile-action>
-                                            <v-icon class="text--lighten-2">place</v-icon>
-                                        </v-list-tile-action>
-                                        <v-list-tile-content>
-                                            <v-list-tile-title>Chicago, US</v-list-tile-title>
+                                            <v-list-tile-title>(952) 393-6877</v-list-tile-title>
                                         </v-list-tile-content>
                                     </v-list-tile>
                                     <v-list-tile>
@@ -208,7 +215,7 @@
                                             <v-icon class="text--lighten-2">email</v-icon>
                                         </v-list-tile-action>
                                         <v-list-tile-content>
-                                            <v-list-tile-title>john@vuetifyjs.com</v-list-tile-title>
+                                            <v-list-tile-title>hello@cbilladeau.com</v-list-tile-title>
                                         </v-list-tile-content>
                                     </v-list-tile>
                                 </v-list>
@@ -222,7 +229,7 @@
                 <v-layout row wrap align-center>
                     <v-flex xs12>
                         <div class="ml-3">
-                            Made with <a href="https://vuejs.org" target="_blank">VueJS</a> & <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
+                            &copy; 2018
                         </div>
                     </v-flex>
                 </v-layout>
