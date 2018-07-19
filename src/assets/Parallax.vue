@@ -1,22 +1,20 @@
 <template>
-    <parallax fixed sectionClass="hero" containerClass="hero-desktop" v-on:scroll="handleScroll">
-        <div class="layer layer-01" data-type="parallax" data-depth="0.20"></div>
-        <div class="layer layer-02" data-type="parallax" data-depth="0.50"></div>
-        <div class="layer layer-03" data-type="parallax" data-depth="1.00"></div>
-        <div class="hero-header">
-            <h1 class="header-type light display-2 mb-2 text-xs-center">UI Designer & Frontend Developer</h1>
-            <div class="display-1 mb-3 text-xs-center">Design, Code & Everything In Between</div>
+    <section v-on:scroll="handleScroll">
+        <div class="hero-desktop">
+            <div class="layer layer-01" data-type="parallax" data-depth="0.20"></div>
+            <div class="layer layer-02" data-type="parallax" data-depth="0.50"></div>
+            <div class="layer layer-03" data-type="parallax" data-depth="1.00"></div>
+            <div class="hero-header">
+                <h1 class="header-type light display-2 mb-2 text-xs-center">UI Designer & Frontend Developer</h1>
+                <div class="subheader-type light headline mb-3 text-xs-center">Design, Code & Everything In Between</div>
+            </div>
         </div>
-    </parallax>
+    </section>
 </template>
 
 <script>
-import Parallax from 'vue-parallaxy'
 
 export default {
-    components: {
-        Parallax
-    },
     methods: {
         handleScroll (event) {
             window.addEventListener("scroll", function() {
@@ -41,9 +39,7 @@ export default {
         this.handleScroll();
     },
     data() {
-        return {
-            speedFactor: 0
-        }
+        return {}
     }
 }
 </script>

@@ -132,7 +132,6 @@
                                         <v-container grid-list-lg>
                                             <v-layout row class="py-3">
                                                 <v-flex xs6 class="text-xs-center">
-                                                    <img src="public/v.png" alt="Vuetify.js">
                                                     <h4 class="headline">owo who's this?</h4>
                                                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet nunc vel lacus elementum molestie sit amet sed elit.</div>
                                                 </v-flex>
@@ -231,7 +230,6 @@
 </template>
 
 <script>
-    import * as easings from 'vuetify/es5/util/easing-patterns'
     import PieChart from './assets/PieChart.js'
     import BarChart from './assets/BarChart.js'
     import Parallax from './assets/Parallax.vue'
