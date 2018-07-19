@@ -4,6 +4,7 @@ $color-pack = false
 
 @import '~vuetify/src/stylus/main'
 
+
 // Variables
 
 body-font = 'Roboto'
@@ -27,7 +28,6 @@ color-tertiary = rgb(130,101,167)
 
 color-accent-1 = rgb(216,63,135)
 color-accent-2 = rgb(233,128,116)
-
 
 
 // Styling
@@ -58,46 +58,54 @@ body {
 }
 
 .application {
+    &.theme--light {
+        background: transparent
+    }
+    
     #hero {
-        background-color: color-primary
-        height: 800px
-        overflow: hidden
-        position: relative
+        height: 100vh !important
         
-        .layer {
-            background-position: bottom center
-            background-size: auto
-            background-repeat: no-repeat
-            width: 100%
-            height: 800px
-            position: fixed
-            z-index: -1
-              
-            &-01 {
-                background-image: url('/public/ilu_bg.jpg')
+        .hero-desktop {
+            height: 100%
+            overflow: hidden
+            position: relative
+            
+            .layer {
+                background-position: bottom
+                background-size: cover
+                background-repeat: no-repeat
+                width: 100%
+                height: 100%
+                position: fixed
+                z-index: -1
+                  
+                &-01 {
+                    background-image: url('/public/hero_03.png')
+                    background-color: color-primary
+                }
+                &-02 {
+                    background-image: url('/public/hero_02.png')
+                }
+                &-03 {
+                    background-image: url('/public/hero_01.png')
+                }
             }
-            &-02 {
-                background-image: url('/public/ilu_03.png')
-            }
-            &-03 {
-                background-image: url('/public/ilu_02.png')
-            }
-            &-04 {
-                background-image: url('/public/ilu_01.png')
-            }
-            &-05 {
-                background-image: url('/public/ilu_man.png')
-            }
+        }
+        
+        .hero-header {
+            position: relative
+            top: 50%
         }
     }
     
     #intro {
-        background: color-accent-1
+        background: color-primary
         color: light-color-primary
-        padding: 10rem 0 14rem
+        padding: 4rem 0 14rem
     }
     
     #skills {
+        background: light-color-primary
         align-items: stretch
         margin-top: -10rem
         padding-bottom: 4rem
@@ -115,17 +123,20 @@ body {
     }
     
     #works {
-        background: color-secondary
+        background: color-accent-1
         color: light-color-primary
     }
     
     #about {
-        display: none; // remove later!
         background: color-secondary
         align-items: stretch
         
         .parallax {
             height: 100% !important
         }
+    }
+    
+    #contact {
+        background: light-color-primary
     }
 }

@@ -11,7 +11,7 @@
         </v-toolbar>
 
         <v-content>
-            <hero></hero>
+            <parallax id="hero" />
 
             <section id="intro">
                 <v-layout column align-center>
@@ -31,7 +31,7 @@
                     <v-flex xs12>
                         <v-container grid-list-xl>
                             <v-layout row wrap>
-                                <v-flex xs12 md4>
+                                <v-flex xs12 sm6 md4>
                                     <v-card class="elevation-4">
                                         <v-card-title primary-title class="layout justify-center">
                                             <div class="text-xs-center">
@@ -39,9 +39,13 @@
                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
                                                 </svg>
                                                 <h3 class="header-type headline">Frontend Development</h3>
-                                                <div class="subheading">I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
                                             </div>
                                         </v-card-title>
+                                        <v-card-text>
+                                            <div class="text-xs-center">
+                                                <div class="subheading">I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                                            </div>
+                                        </v-card-text>
                                         <v-card-text>
                                             <div class="title">Languages</div>
                                             <div>HTML5, CSS, Sass, Less, Stylus, JS, jQuery, VueJS, PHP</div>
@@ -56,7 +60,7 @@
                                         </v-card-text>
                                     </v-card>
                                 </v-flex>
-                                <v-flex xs12 md4>
+                                <v-flex xs12 sm6 md4>
                                     <v-card class="elevation-4">
                                         <v-card-title primary-title class="layout justify-center">
                                             <div class="text-xs-center">
@@ -64,9 +68,13 @@
                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
                                                 </svg>
                                                 <h3 class="header-type headline">UI Design</h3>
-                                                <div class="subheading">I design dynamic, responsive-first web apps that put the user experience front & center.</div>
                                             </div>
                                         </v-card-title>
+                                        <v-card-text>
+                                            <div class="text-xs-center">
+                                                <div class="subheading">I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                            </div>
+                                        </v-card-text>
                                         <v-card-text>
                                             <div class="title">Design</div>
                                             <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
@@ -77,7 +85,7 @@
                                         </v-card-text>
                                     </v-card>
                                 </v-flex>
-                                <v-flex xs12 md4>
+                                <v-flex xs12 sm12 md4>
                                     <v-card class="elevation-4">
                                         <v-card-title primary-title class="layout justify-center">
                                             <div class="text-xs-center">
@@ -85,9 +93,13 @@
                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
                                                 </svg>
                                                 <h3 class="header-type headline">Game Development</h3>
-                                                <div class="subheading">I'm an <a href="http://billet-deaux.com/" target="_blank" ref="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
                                             </div>
                                         </v-card-title>
+                                        <v-card-text>
+                                            <div class="text-xs-center">
+                                                <div class="subheading">I'm an <a href="http://billet-deaux.com/" target="_blank" ref="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                            </div>
+                                        </v-card-text>
                                         <v-card-text>
                                             <div class="title">Design</div>
                                             <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
@@ -181,19 +193,7 @@
             <section id="contact">
                 <v-container grid-list-xl>
                     <v-layout row wrap justify-center class="my-5">
-                        <v-flex xs12 sm4>
-                            <v-card class="elevation-0 transparent">
-                                <v-card-title primary-title class="layout justify-center">
-                                    <div class="headline">About</div>
-                                </v-card-title>
-                                <v-card-text>
-                                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. 
-                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                                    Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti. 
-                                </v-card-text>
-                            </v-card>
-                        </v-flex>
-                        <v-flex xs12 sm4 offset-sm1>
+                        <v-flex xs12>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
                                     <div class="headline">Contact</div>
@@ -202,14 +202,6 @@
                                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
                                 </v-card-text>
                                 <v-list class="transparent">
-                                    <v-list-tile>
-                                        <v-list-tile-action>
-                                            <v-icon class="text--lighten-2">phone</v-icon>
-                                        </v-list-tile-action>
-                                        <v-list-tile-content>
-                                            <v-list-tile-title>(952) 393-6877</v-list-tile-title>
-                                        </v-list-tile-content>
-                                    </v-list-tile>
                                     <v-list-tile>
                                         <v-list-tile-action>
                                             <v-icon class="text--lighten-2">email</v-icon>
@@ -242,6 +234,7 @@
     import * as easings from 'vuetify/es5/util/easing-patterns'
     import PieChart from './assets/PieChart.js'
     import BarChart from './assets/BarChart.js'
+    import Parallax from './assets/Parallax.vue'
     require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
 
     export default {
@@ -249,27 +242,14 @@
         components: {
             PieChart,
             BarChart,
+            Parallax
         },
         data () {
             return {
-                title: 'c.billadeau',
-                type: 'selector',
-                selector: '#intro',
-                easings: Object.keys(easings),
-                hero: Hero
+                title: 'c.billadeau'
             }
         },
         computed: {
-            target () {
-                return this[this.type]
-            },
-            options () {
-                return {
-                    duration: 600,
-                    offset: 200,
-                    easing: 'easeInOutCubic'
-                }
-            },
         }
     }
 </script>
