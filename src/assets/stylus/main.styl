@@ -94,30 +94,38 @@ body {
                 }
                 &-02 {
                     background-image: url('/public/hero_02.png')
+                    opacity: 0.9
                 }
                 &-03 {
                     background-image: url('/public/hero_01.png')
+                    opacity: 0.9
                 }
             }
         }
         
         .hero-header {
             position: relative
+            padding: 1rem 0 0.5rem
+            //background-color: color-tertiary
             top: 40%
+            //opacity: 0.75
         }
     }
     
     #intro {
         background: color-primary
         color: light-color-primary
-        padding: 4rem 0 14rem
+        padding: 4rem 0 6rem
     }
     
     #skills {
         background: light-color-primary
         align-items: stretch
-        margin-top: -10rem
         padding-bottom: 4rem
+        
+        .skills-container {
+            margin-top: -4rem
+        }
         
         .card {
             height: 100% !important

@@ -23,7 +23,6 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.4",
-    "node-sass": "^4.9.2",
     "style-loader": "^0.13.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

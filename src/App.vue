@@ -4,9 +4,7 @@
             <v-toolbar-title v-text="title"></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-                    <v-btn flat @click="$vuetify.goTo(target, options)">Works</v-btn>
-                    <v-btn flat>About</v-btn>
-                    <v-btn flat>Contact</v-btn>
+                    <v-btn v-for="nav in navs" :key="nav.index" flat ripple :target="nav.target">{{ nav.name }}</v-btn>
                 </v-toolbar-items>
         </v-toolbar>
 
@@ -28,7 +26,7 @@
 
             <section id="skills">
                 <v-layout column align-center>
-                    <v-flex xs12>
+                    <v-flex xs12 class="skills-container">
                         <v-container grid-list-xl>
                             <v-layout row wrap>
                                 <v-flex xs12 sm6 md4>
@@ -124,8 +122,8 @@
                                 <v-card class="elevation-4">
                                     <v-card-title primary-title class="layout justify-center py-5">
                                         <div class="text-xs-center">
-                                            <h2 class="headline">About</h2>
-                                            <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit</em>
+                                            <h2 class="header-type display-1">About</h2>
+                                            <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em>
                                         </div>
                                     </v-card-title>
                                     <v-card-text>
@@ -186,6 +184,11 @@
                             </div>
                         </v-flex>
                     </v-layout>
+                    <v-layout row>
+                        <lightbox
+                            :images="images">
+                        </lightbox>
+                    </v-layout>
                 </v-container>
             </section>
 
@@ -195,7 +198,7 @@
                         <v-flex xs12>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
-                                    <div class="headline">Contact</div>
+                                    <div class="header-type display-1">Contact</div>
                                 </v-card-title>
                                 <v-card-text>
                                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
@@ -233,6 +236,7 @@
     import PieChart from './assets/PieChart.js'
     import BarChart from './assets/BarChart.js'
     import Parallax from './assets/Parallax.vue'
+    import Lightbox from './assets/Lightbox.vue'
     require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
 
     export default {
@@ -240,14 +244,29 @@
         components: {
             PieChart,
             BarChart,
-            Parallax
+            Parallax,
+            Lightbox
         },
         data () {
             return {
-                title: 'c.billadeau'
+                title: 'c.billadeau',
+                images: '',
+                navs: [
+                {
+                    name: 'Works',
+                    target: 'works'
+                },
+                {
+                    name: 'About',
+                    target: 'about'
+                },
+                {
+                    name: 'Contact',
+                    target: 'contact'
+                }
+                ]
             }
         },
-        computed: {
-        }
+         computed: {}
     }
 </script>
