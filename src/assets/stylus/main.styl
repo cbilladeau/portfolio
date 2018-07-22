@@ -7,7 +7,7 @@ $color-pack = false
 
 // Variables
 
-body-font = 'Roboto'
+body-font = 'Open Sans'
 header-font = 'Unica One'
 
 dark-color-primary = rgba(0,0,0,0.87)
@@ -33,16 +33,18 @@ color-accent-2 = rgb(233,128,116)
 // Styling
 
 body {
-    font-family: body-font, sans-serif
+    .application {
+        font-family: body-font, sans-serif
     
-    a {
-        color: color-accent-1
-        text-decoration: none
-        
-        &:hover,
-        &:focus,
-        &:active {
-            color: color-accent-2
+        a {
+            color: color-accent-1
+            text-decoration: none
+            
+            &:hover,
+            &:focus,
+            &:active {
+                color: color-accent-2
+            }
         }
     }
     
@@ -58,6 +60,8 @@ body {
     
     .subheader-type {
         font-family: body-font, sans-serif
+        font-style: italic
+        font-weight: 300
         color: dark-color-tertiary
         
         &.light {
@@ -106,14 +110,18 @@ body {
         .hero-header {
             position: relative
             padding: 1rem 0 0.5rem
-            //background-color: color-tertiary
+            background-color: color-tertiary
             top: 40%
-            //opacity: 0.75
+            opacity: 0.85
+            
+            .header-type {
+                color: light-color-primary
+            }
         }
     }
     
     #intro {
-        background: color-primary
+        background: color-secondary
         color: light-color-primary
         padding: 4rem 0 6rem
     }
@@ -140,11 +148,13 @@ body {
     }
     
     #works {
+        display: none //remove later
         background: color-accent-1
         color: light-color-primary
     }
     
     #about {
+        display: none //remove later
         background: color-secondary
         align-items: stretch
         
@@ -154,6 +164,10 @@ body {
     }
     
     #contact {
-        background: light-color-primary
+        background: color-accent-1
+        
+        .card {
+            color: light-color-primary
+        }
     }
 }

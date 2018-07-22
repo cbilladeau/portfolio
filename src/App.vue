@@ -4,8 +4,8 @@
             <v-toolbar-title v-text="title"></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-                    <v-btn v-for="nav in navs" :key="nav.index" flat ripple :target="nav.target">{{ nav.name }}</v-btn>
-                </v-toolbar-items>
+                <v-btn v-for="nav in navs" :key="nav.index" flat ripple :click="nav.target">{{ nav.name }}</v-btn>
+            </v-toolbar-items>
         </v-toolbar>
 
         <v-content>
@@ -95,7 +95,7 @@
                                         </v-card-title>
                                         <v-card-text>
                                             <div class="text-xs-center">
-                                                <div class="subheading">I'm an <a href="http://billet-deaux.com/" target="_blank" ref="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                                <div class="subheading">I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
                                             </div>
                                         </v-card-text>
                                         <v-card-text>
@@ -198,18 +198,18 @@
                         <v-flex xs12>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
-                                    <div class="header-type display-1">Contact</div>
+                                    <div class="header-type light display-1">Contact</div>
                                 </v-card-title>
                                 <v-card-text>
-                                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                                    This portfolio is under development.  For resume & other inquires:
                                 </v-card-text>
-                                <v-list class="transparent">
+                                <v-list dark class="transparent">
                                     <v-list-tile>
                                         <v-list-tile-action>
-                                            <v-icon class="text--lighten-2">email</v-icon>
+                                            <v-icon dark>email</v-icon>
                                         </v-list-tile-action>
                                         <v-list-tile-content>
-                                            <v-list-tile-title>hello@cbilladeau.com</v-list-tile-title>
+                                            <v-list-tile-title>hello@billet-deaux.com</v-list-tile-title>
                                         </v-list-tile-content>
                                     </v-list-tile>
                                 </v-list>
@@ -252,21 +252,20 @@
                 title: 'c.billadeau',
                 images: '',
                 navs: [
-                {
-                    name: 'Works',
-                    target: 'works'
-                },
-                {
-                    name: 'About',
-                    target: 'about'
-                },
-                {
-                    name: 'Contact',
-                    target: 'contact'
-                }
+                // {
+                //     name: 'Works',
+                //     target: 'works'
+                // },
+                // {
+                //     name: 'About',
+                //     target: 'about'
+                // },
+                // {
+                //     name: 'Contact',
+                //     target: '#contact'
+                // }
                 ]
             }
-        },
-         computed: {}
+        }
     }
 </script>
