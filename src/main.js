@@ -10,7 +10,6 @@ import '../public/hero_01.png'
 import '../public/hero_02.png'
 import '../public/hero_03.png'
 import '../public/hero_04.png'
-import '../public/hero.png'
 
 Vue.use(Vuetify)
 
