@@ -3,7 +3,8 @@
         <div class="hero-desktop">
             <div class="layer layer-01" data-type="parallax" data-depth="0.20"></div>
             <div class="layer layer-02" data-type="parallax" data-depth="0.50"></div>
-            <div class="layer layer-03" data-type="parallax" data-depth="1.00"></div>
+            <div class="layer layer-03" data-type="parallax" data-depth="0.80"></div>
+            <div class="layer layer-04" data-type="parallax" data-depth="1.00"></div>
             <div class="hero-header">
                 <h1 class="header-type light display-3 text-xs-center">UI Designer & Frontend Developer</h1>
                 <div class="subheader-type light headline mb-3 text-xs-center">Design, Code & Everything In Between</div>

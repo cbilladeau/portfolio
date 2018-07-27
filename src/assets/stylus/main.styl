@@ -7,8 +7,8 @@ $color-pack = false
 
 // Variables
 
-body-font = 'Open Sans'
-header-font = 'Unica One'
+body-font = 'Geo Sans'
+header-font = 'Typewriter Condensed'
 
 dark-color-primary = rgba(0,0,0,0.87)
 dark-color-secondary = rgba(0,0,0,0.56)
@@ -30,11 +30,35 @@ color-accent-1 = rgb(216,63,135)
 color-accent-2 = rgb(233,128,116)
 
 
+// Type
+
+ @font-face
+   font-family Geo Sans
+   font-style normal
+   src url('~/public/GeosansLight.otf')
+
+ @font-face
+   font-family Geo Sans
+   font-style italic
+   src url('~/public/GeosansLight-Oblique.otf')
+   
+ @font-face
+   font-family Typewriter Condensed
+   font-style normal
+   src url('~/public/TypewriterCondensed.otf')
+
+ @font-face
+   font-family Typewriter Condensed
+   font-style bold
+   src url('~/public/TypewriterCondensed-Bold.otf')
+
+
 // Styling
 
 body {
     .application {
         font-family: body-font, sans-serif
+        font-size: 1.25rem
     
         a {
             color: color-accent-1
@@ -84,8 +108,7 @@ body {
             position: relative
             
             .layer {
-                background-position: bottom
-                background-size: cover
+                background-size: contain
                 background-repeat: no-repeat
                 width: 100%
                 height: 100%
@@ -93,16 +116,24 @@ body {
                 z-index: -1
                   
                 &-01 {
-                    background-image: url('/public/hero_03.png')
+                    background-image: url('/public/hero_04.png')
                     background-color: color-primary
+                    background-position: top
                 }
                 &-02 {
-                    background-image: url('/public/hero_02.png')
+                    background-image: url('/public/hero_03.png')
                     opacity: 0.9
+                    background-position: bottom
                 }
                 &-03 {
+                    background-image: url('/public/hero_02.png')
+                    opacity: 0.9
+                    background-position: bottom
+                }
+                &-04 {
                     background-image: url('/public/hero_01.png')
                     opacity: 0.9
+                    background-position: bottom
                 }
             }
         }
