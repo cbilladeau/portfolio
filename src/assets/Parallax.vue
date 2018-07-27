@@ -5,29 +5,21 @@
                 data-type="parallax"
                 data-depth="0.20"
                 :image-source="('./public/hero_04.png')"
-                loading-image="/public/hero_00.png"
-                error-image="/public/hero.png"
             ></img-blur>
             <img-blur class="layer layer-02"
                 data-type="parallax"
                 data-depth="0.50"
                 :image-source="('./public/hero_03.png')"
-                loading-image="/public/hero_00.png"
-                error-image="/public/hero.png"
             ></img-blur>
             <img-blur class="layer layer-03"
                 data-type="parallax"
                 data-depth="0.80"
                 :image-source="('./public/hero_02.png')"
-                loading-image="/public/hero_00.png"
-                error-image="/public/hero.png"
             ></img-blur>
             <img-blur class="layer layer-04"
                 data-type="parallax"
                 data-depth="1.00"
                 :image-source="('./public/hero_01.png')"
-                loading-image="/public/hero_00.png"
-                error-image="/public/hero.png"
             ></img-blur>
             <div class="hero-header">
                 <h1 class="header-type light display-3 text-xs-center">UI Designer & Frontend Developer</h1>
