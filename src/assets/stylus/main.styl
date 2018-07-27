@@ -92,6 +92,16 @@ body {
             color: light-color-tertiary
         }
     }
+    
+    .title-type {
+        font-style: italic
+        color: dark-color-secondary
+        line-height: 1.5 !important
+        
+        &.light {
+            color: light-color-secondary
+        }
+    }
 }
 
 .application {
@@ -168,12 +178,16 @@ body {
         
         .card {
             height: 100% !important
-            padding: 2rem 1.5rem
+            padding: 3rem 1.5rem
+            
+            .card__title {
+                padding: 0
+                margin: 0
+            }
         
             .skill-icon {
                 height: 72px
                 fill: color-tertiary
-                margin-bottom: 1rem
             }
         }
     }

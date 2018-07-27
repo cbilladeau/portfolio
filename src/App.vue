@@ -16,7 +16,7 @@
                     <v-flex xs12 sm4>
                         <div class="text-xs-center">
                             <h2 class="header-type light display-1">Hi, I'm Cour!</h2>
-                            <span class="subheading">
+                            <span class="headline">
                                 I'm making & breaking stuff in Chicago, IL.
                             </span>
                         </div>
@@ -36,24 +36,22 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
                                                 </svg>
-                                                <h3 class="header-type headline">Frontend Development</h3>
+                                                <v-card-text>
+                                                    <h3 class="header-type headline">Frontend Development</h3>
+                                                    <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                                                </v-card-text>
                                             </div>
                                         </v-card-title>
                                         <v-card-text>
-                                            <div class="text-xs-center">
-                                                <div class="subheading">I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
-                                            </div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title">Languages</div>
+                                            <div class="title title-type">Languages</div>
                                             <div>HTML5, CSS, Sass, Less, Stylus, JS, jQuery, VueJS, PHP</div>
                                         </v-card-text>
                                         <v-card-text>
-                                            <div class="title">CMS & Frameworks</div>
+                                            <div class="title title-type">CMS & Frameworks</div>
                                             <div>Wordpress, Bootstrap, Material Design</div>
                                         </v-card-text>
                                         <v-card-text>
-                                            <div class="title">Tools</div>
+                                            <div class="title title-type">Tools</div>
                                             <div>WGAC/W3C, Git, Github, Terminal, Homebrew, npm & Yarn, Grunt & Gulp, Webpack & Encore, Agile Development, JIRA, Confluence</div>
                                         </v-card-text>
                                     </v-card>
@@ -65,20 +63,18 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
                                                 </svg>
-                                                <h3 class="header-type headline">UI Design</h3>
+                                                <v-card-text>
+                                                    <h3 class="header-type headline">UI Design</h3>
+                                                    <div>I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                                </v-card-text>
                                             </div>
                                         </v-card-title>
                                         <v-card-text>
-                                            <div class="text-xs-center">
-                                                <div class="subheading">I design dynamic, responsive-first web apps that put the user experience front & center.</div>
-                                            </div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title">Design</div>
+                                            <div class="title title-type">Design</div>
                                             <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
                                         </v-card-text>
                                         <v-card-text>
-                                            <div class="title">Tools</div>
+                                            <div class="title title-type">Tools</div>
                                             <div>UXPin, Axure, Photoshop, Illustrator, InDesign</div>
                                         </v-card-text>
                                     </v-card>
@@ -90,20 +86,18 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
                                                 </svg>
-                                                <h3 class="header-type headline">Game Development</h3>
+                                                <v-card-text>
+                                                    <h3 class="header-type headline">Game Development</h3>
+                                                    <div>I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                                </v-card-text>
                                             </div>
                                         </v-card-title>
                                         <v-card-text>
-                                            <div class="text-xs-center">
-                                                <div class="subheading">I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
-                                            </div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title">Design</div>
+                                            <div class="title title-type">Design</div>
                                             <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
                                         </v-card-text>
                                         <v-card-text>
-                                            <div class="title">Languages & Tools</div>
+                                            <div class="title title-type">Languages & Tools</div>
                                             <div>JS, Unity, Ink, Twine</div>
                                         </v-card-text>
                                     </v-card>
