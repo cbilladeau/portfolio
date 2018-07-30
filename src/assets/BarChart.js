@@ -9,10 +9,19 @@ export default {
         this.renderChart({
             labels: ['HTML5', 'CSS', 'Javascript', 'PHP', 'UI Design', 'Photoshop', 'Illustrator'],
             datasets: [{
-                backgroundColor: 'rgba(154,29,45,0.7)',
+                backgroundColor: 'rgb(233,128,116)',
                 data: [90, 90, 50, 30, 70, 90, 60],
                 datalabels: {
-                    display: false
+                    font: {
+                        family: 'Geo Sans, sans-serif',
+                        size: 16
+                    },
+                    color: 'rgba(255,255,255,1)',
+                    align: 'right',
+                    anchor: 'start',
+                    formatter: function(value, context) {
+                        return context.chart.data.labels[context.dataIndex];
+                    }
                 }
             }, {
                 backgroundColor: 'rgba(0,0,0,0.12)',
@@ -24,8 +33,7 @@ export default {
                     anchor: 'end',
                     color: 'rgba(0,0,0,0.56)',
                     font: {
-                        family: 'Lato',
-                        weight: '600',
+                        family: 'Typewriter Condensed, sans-serif',
                         size: 14
                     },
                     formatter: function(value, context) {
@@ -44,15 +52,10 @@ export default {
             scales: {
                 yAxes: [{
                     barPercentage: 1,
-                    categoryPercentage: 0.7,
+                    categoryPercentage: 0.8,
                     stacked: true,
                     ticks: {
-                        mirror: true,
-                        fontColor: 'rgba(255,255,255,1)',
-                        fontFamily: 'Lato',
-                        fontStyle: 'bold',
-                        fontSize: 14,
-                        padding: -15
+                        display: false
                     },
                     gridLines: {
                         display: false,

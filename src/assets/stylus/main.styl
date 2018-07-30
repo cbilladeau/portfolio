@@ -176,23 +176,27 @@ body {
             .card__title {
                 padding: 0
                 margin: 0
+                display: block
+            }
+            
+            .card__text {
+                padding: 0.5rem 0
             }
         
             .skill-icon {
                 height: 72px
+                width: 100%
                 fill: color-tertiary
             }
         }
     }
     
     #works {
-        display: none //remove later
         background: color-accent-1
         color: light-color-primary
     }
     
     #about {
-        display: none //remove later
         background: color-secondary
         align-items: stretch
         
@@ -202,10 +206,10 @@ body {
     }
     
     #contact {
-        background: color-accent-1
+        background: light-color-primary
         
         .card {
-            color: light-color-primary
+            color: dark-color-primary
         }
     }
 }

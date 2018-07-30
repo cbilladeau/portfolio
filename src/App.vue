@@ -4,7 +4,7 @@
             <v-toolbar-title v-text="title"></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-                <v-btn v-for="nav in navs" :key="nav.index" flat ripple :click="nav.target">{{ nav.name }}</v-btn>
+                <v-btn v-for="nav in navs" :key="nav.index" flat ripple :href="nav.target">{{ nav.name }}</v-btn>
             </v-toolbar-items>
         </v-toolbar>
 
@@ -32,15 +32,13 @@
                                 <v-flex xs12 sm6 md4>
                                     <v-card class="elevation-4">
                                         <v-card-title primary-title class="layout justify-center">
-                                            <div class="text-xs-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
-                                                </svg>
-                                                <v-card-text>
-                                                    <h3 class="header-type headline">Frontend Development</h3>
-                                                    <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
-                                                </v-card-text>
-                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
+                                            </svg>
+                                            <v-card-text class="text-xs-center">
+                                                <h3 class="header-type headline">Frontend Development</h3>
+                                                <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                                            </v-card-text>
                                         </v-card-title>
                                         <v-card-text>
                                             <div class="title title-type">Languages</div>
@@ -59,15 +57,13 @@
                                 <v-flex xs12 sm6 md4>
                                     <v-card class="elevation-4">
                                         <v-card-title primary-title class="layout justify-center">
-                                            <div class="text-xs-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
-                                                </svg>
-                                                <v-card-text>
-                                                    <h3 class="header-type headline">UI Design</h3>
-                                                    <div>I design dynamic, responsive-first web apps that put the user experience front & center.</div>
-                                                </v-card-text>
-                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
+                                            </svg>
+                                            <v-card-text class="text-xs-center">
+                                                <h3 class="header-type headline">UI Design</h3>
+                                                <div>I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                            </v-card-text>
                                         </v-card-title>
                                         <v-card-text>
                                             <div class="title title-type">Design</div>
@@ -82,15 +78,13 @@
                                 <v-flex xs12 sm12 md4>
                                     <v-card class="elevation-4">
                                         <v-card-title primary-title class="layout justify-center">
-                                            <div class="text-xs-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
-                                                </svg>
-                                                <v-card-text>
-                                                    <h3 class="header-type headline">Game Development</h3>
-                                                    <div>I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
-                                                </v-card-text>
-                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
+                                            </svg>
+                                            <v-card-text class="text-xs-center">
+                                                <h3 class="header-type headline">Game Development</h3>
+                                                <div>I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                            </v-card-text>
                                         </v-card-title>
                                         <v-card-text>
                                             <div class="title title-type">Design</div>
@@ -114,7 +108,7 @@
                         <v-layout row class="my-5">
                             <v-flex xs12>
                                 <v-card class="elevation-4">
-                                    <v-card-title primary-title class="layout justify-center py-5">
+                                    <v-card-title primary-title class="layout justify-center pt-5">
                                         <div class="text-xs-center">
                                             <h2 class="header-type display-1">About</h2>
                                             <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em>
@@ -122,7 +116,7 @@
                                     </v-card-title>
                                     <v-card-text>
                                         <v-container grid-list-lg>
-                                            <v-layout row class="py-3">
+                                            <v-layout row>
                                                 <v-flex xs6 class="text-xs-center">
                                                     <h4 class="headline">owo who's this?</h4>
                                                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet nunc vel lacus elementum molestie sit amet sed elit.</div>
@@ -131,7 +125,7 @@
                                                     <bar-chart style="max-height: 250px;"></bar-chart>
                                                 </v-flex>
                                             </v-layout>
-                                            <v-layout row class="py-3">
+                                            <v-layout row>
                                                 <v-flex xs3 class="text-xs-center">
                                                     <h4 class="headline">Part Designer</h4>
                                                     <ul>
@@ -192,15 +186,15 @@
                         <v-flex xs12>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
-                                    <div class="header-type light display-1">Contact</div>
+                                    <div class="header-type display-1">Contact</div>
                                 </v-card-title>
                                 <v-card-text>
                                     This portfolio is under development.  For resume & other inquires:
                                 </v-card-text>
-                                <v-list dark class="transparent">
+                                <v-list light class="transparent">
                                     <v-list-tile>
                                         <v-list-tile-action>
-                                            <v-icon dark>email</v-icon>
+                                            <v-icon light>email</v-icon>
                                         </v-list-tile-action>
                                         <v-list-tile-content>
                                             <v-list-tile-title>hello@billet-deaux.com</v-list-tile-title>
@@ -246,18 +240,18 @@
                 title: 'c.billadeau',
                 images: '',
                 navs: [
-                // {
-                //     name: 'Works',
-                //     target: 'works'
-                // },
-                // {
-                //     name: 'About',
-                //     target: 'about'
-                // },
-                // {
-                //     name: 'Contact',
-                //     target: '#contact'
-                // }
+                {
+                    name: 'Works',
+                    target: '#works'
+                },
+                {
+                    name: 'About',
+                    target: '#about'
+                },
+                {
+                    name: 'Contact',
+                    target: '#contact'
+                }
                 ]
             }
         }
