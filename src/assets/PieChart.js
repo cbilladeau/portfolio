@@ -4,7 +4,7 @@ export default {
     extends: Pie,
     mounted () {
         this.renderChart({
-            labels: ['Designing', 'Programming', 'Sleeping', 'Gaming', 'Boxing'],
+            labels: ['Designing', 'Programming', 'Sleeping', 'Gaming', 'Powerlifting'],
             datasets: [{
                 backgroundColor: ['rgb(42,27,61)', 'rgb(68,49,141)', 'rgb(130,101,167)', 'rgb(216,63,135)', 'rgb(233,128,116)'],
                 data: [30, 30, 20, 10, 10],

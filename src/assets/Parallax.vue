@@ -1,5 +1,5 @@
 <template>
-    <section v-on:scroll="handleScroll">
+    <section :scroll="handleScroll">
         <div class="hero-desktop">
             <img-blur class="layer layer-01"
                 data-type="parallax"
@@ -22,8 +22,19 @@
                 :image-source="('./public/hero_01.png')"
             ></img-blur>
             <div class="hero-header">
-                <h1 class="header-type light display-3 text-xs-center">UI Designer & Frontend Developer</h1>
-                <div class="subheader-type light display-1 mb-3 text-xs-center">Design, Code & Everything In Between</div>
+                <div
+                    data-type="parallax"
+                    data-depth="0.50"
+                >
+                    <h1 class="subheader-type light">Hi<span class="color-accent-1">,</span><br />I'm<br />Cour<span class="color-tertiary">.</span></h1>
+                    <h2 class="header-type light">UI Designer<br />& Frontend Dev</h2>
+                    <h3 class="title-type light">Located in Chicago, IL</h3>
+                    <div class="text-xs-center">
+                        <v-btn large flat icon class="color-accent-2" @click="$vuetify.goTo('#intro', scrollOptions)">
+                            <v-icon x-large>arrow_drop_down</v-icon>
+                        </v-btn>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -32,6 +43,7 @@
 <script>
 
 import ImgBlur from './ImgBlur.vue'
+import * as easings from 'vuetify/es5/util/easing-patterns'
 
 export default {
     components: {
@@ -57,11 +69,21 @@ export default {
             })
         }
     },
+    computed: {
+        scrollOptions () {
+            return {
+                duration: 1200,
+                offset: 0,
+                easing: 'easeInOutQuad'
+            }
+        }
+    },
     mounted() {
         this.handleScroll();
     },
     data() {
-        return {}
+        return {
+        }
     }
 }
 </script>

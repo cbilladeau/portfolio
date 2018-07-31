@@ -53,6 +53,20 @@ color-accent-2 = rgb(233,128,116)
    src url('~/public/TypewriterCondensed-Bold.otf')
 
 
+// Helpers
+
+.color-accent-1 {
+    color: color-accent-1 !important
+}
+
+.color-accent-2 {
+    color: color-accent-2 !important
+}
+
+.color-tertiary {
+    color: color-tertiary !important
+}
+
 // Styling
 
 body {
@@ -128,6 +142,7 @@ body {
                   
                 &-01 {
                     background-color: color-primary
+                    background-size: 100% auto
                 }
                 &-02 {
                     opacity: 0.7
@@ -143,13 +158,41 @@ body {
         
         .hero-header {
             position: relative
-            padding: 1rem 0 0.5rem
-            background-color: color-tertiary
-            top: 40%
-            opacity: 0.85
+            left: 45%
+            right: 0
+            padding: 6rem 3rem 0
+            background-color: alpha(color-primary, 0.8)
+            width: 37%
+            height: 100%
+            
+            .subheader-type {
+                color: light-color-primary
+                font-style: normal
+                font-size: 10rem
+                letter-spacing: 5px
+                line-height: 1
+                white-space: nowrap
+            }
             
             .header-type {
-                color: light-color-primary
+                padding: 1rem 0
+                color: light-color-secondary
+                font-size: 4rem
+                letter-spacing: -1px
+                line-height: 1.15
+                white-space: nowrap
+            }
+            
+            // .btn .icon {
+            //     font-size: 72px
+            // }
+            
+            .title-type {
+                padding-bottom: 1rem
+                font-size: 2rem
+                font-weight: 400
+                letter-spacing: 1px
+                white-space: nowrap
             }
         }
     }

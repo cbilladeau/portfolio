@@ -1,13 +1,12 @@
 <template>
     <v-app>
-        <v-toolbar fixed class="elevation-6">
+<!--         <v-toolbar fixed class="elevation-6">
             <v-toolbar-title v-text="title"></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <v-btn v-for="nav in navs" :key="nav.index" flat ripple :href="nav.target">{{ nav.name }}</v-btn>
             </v-toolbar-items>
-        </v-toolbar>
-
+        </v-toolbar> -->
         <v-content>
             <parallax id="hero" />
 
@@ -15,9 +14,9 @@
                 <v-layout column align-center>
                     <v-flex xs12 sm4>
                         <div class="text-xs-center">
-                            <h2 class="header-type light display-1">Hi, I'm Cour!</h2>
+                            <h2 class="header-type light display-1">What I Do</h2>
                             <span class="headline">
-                                I'm making & breaking stuff in Chicago, IL.
+                                I make & break stuff from my studio in Chicago, IL.
                             </span>
                         </div>
                     </v-flex>
@@ -110,7 +109,7 @@
                                 <v-card class="elevation-4">
                                     <v-card-title primary-title class="layout justify-center pt-5">
                                         <div class="text-xs-center">
-                                            <h2 class="header-type display-1">About</h2>
+                                            <h2 class="header-type display-1">Who I Am</h2>
                                             <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em>
                                         </div>
                                     </v-card-title>
@@ -165,7 +164,7 @@
                     <v-layout row class="my-5">
                         <v-flex xs12>
                             <div class="text-xs-center">
-                                <h2 class="header-type light display-1">Works</h2>
+                                <h2 class="header-type light display-1">I Make Stuff</h2>
                                 <em class="subheading">
                                     Cras facilisis mi vitae nunc lobortis pharetra 
                                 </em>
@@ -186,7 +185,7 @@
                         <v-flex xs12>
                             <v-card class="elevation-0 transparent">
                                 <v-card-title primary-title class="layout justify-center">
-                                    <div class="header-type display-1">Contact</div>
+                                    <div class="header-type display-1">Get In Touch</div>
                                 </v-card-title>
                                 <v-card-text>
                                     This portfolio is under development.  For resume & other inquires:
