@@ -1,18 +1,13 @@
 <template>
     <v-app>
-<!--         <v-toolbar fixed class="elevation-6">
-            <v-toolbar-title v-text="title"></v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-items>
-                <v-btn v-for="nav in navs" :key="nav.index" flat ripple :href="nav.target">{{ nav.name }}</v-btn>
-            </v-toolbar-items>
-        </v-toolbar> -->
+        
         <v-content>
+            <!-- <navigation id="navigation" /> -->
             <parallax id="hero" />
 
             <section id="intro">
                 <v-layout column align-center>
-                    <v-flex xs12 sm4>
+                    <v-flex xs12>
                         <div class="text-xs-center">
                             <h2 class="header-type light display-1">What I Do</h2>
                             <span class="headline">
@@ -24,138 +19,79 @@
             </section>
 
             <section id="skills">
-                <v-layout column align-center>
-                    <v-flex xs12 class="skills-container">
-                        <v-container grid-list-xl>
-                            <v-layout row wrap>
-                                <v-flex xs12 sm6 md4>
-                                    <v-card class="elevation-4">
-                                        <v-card-title primary-title class="layout justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
-                                            </svg>
-                                            <v-card-text class="text-xs-center">
-                                                <h3 class="header-type headline">Frontend Development</h3>
-                                                <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                <v-parallax src="./public/floral-hero.png">
+                    <v-layout column align-center>
+                        <v-flex xs12 class="skills-container">
+                            <v-container grid-list-xl>
+                                <v-layout row wrap>
+                                    <v-flex xs12 md6 lg4>
+                                        <v-card class="elevation-8">
+                                            <v-card-title primary-title class="layout justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
+                                                </svg>
+                                                <v-card-text class="text-xs-center">
+                                                    <h3 class="header-type headline">Frontend Development</h3>
+                                                    <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                                                </v-card-text>
+                                            </v-card-title>
+                                            <v-card-text>
+                                                <div class="title title-type">Languages</div>
+                                                <div>HTML5, CSS, Sass, Less, Stylus, JS, jQuery, VueJS, PHP</div>
                                             </v-card-text>
-                                        </v-card-title>
-                                        <v-card-text>
-                                            <div class="title title-type">Languages</div>
-                                            <div>HTML5, CSS, Sass, Less, Stylus, JS, jQuery, VueJS, PHP</div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title title-type">CMS & Frameworks</div>
-                                            <div>Wordpress, Bootstrap, Material Design</div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title title-type">Tools</div>
-                                            <div>WGAC/W3C, Git, Github, Terminal, Homebrew, npm & Yarn, Grunt & Gulp, Webpack & Encore, Agile Development, JIRA, Confluence</div>
-                                        </v-card-text>
-                                    </v-card>
-                                </v-flex>
-                                <v-flex xs12 sm6 md4>
-                                    <v-card class="elevation-4">
-                                        <v-card-title primary-title class="layout justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
-                                            </svg>
-                                            <v-card-text class="text-xs-center">
-                                                <h3 class="header-type headline">UI Design</h3>
-                                                <div>I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                            <v-card-text>
+                                                <div class="title title-type">CMS & Frameworks</div>
+                                                <div>Wordpress, Bootstrap, Material Design</div>
                                             </v-card-text>
-                                        </v-card-title>
-                                        <v-card-text>
-                                            <div class="title title-type">Design</div>
-                                            <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title title-type">Tools</div>
-                                            <div>UXPin, Axure, Photoshop, Illustrator, InDesign</div>
-                                        </v-card-text>
-                                    </v-card>
-                                </v-flex>
-                                <v-flex xs12 sm12 md4>
-                                    <v-card class="elevation-4">
-                                        <v-card-title primary-title class="layout justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
-                                            </svg>
-                                            <v-card-text class="text-xs-center">
-                                                <h3 class="header-type headline">Game Development</h3>
-                                                <div>I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                            <v-card-text>
+                                                <div class="title title-type">Tools</div>
+                                                <div>WGAC/W3C, Git, Github, Terminal, Homebrew, npm & Yarn, Grunt & Gulp, Webpack & Encore, Agile Development, JIRA, Confluence</div>
                                             </v-card-text>
-                                        </v-card-title>
-                                        <v-card-text>
-                                            <div class="title title-type">Design</div>
-                                            <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
-                                        </v-card-text>
-                                        <v-card-text>
-                                            <div class="title title-type">Languages & Tools</div>
-                                            <div>JS, Unity, Ink, Twine</div>
-                                        </v-card-text>
-                                    </v-card>
-                                </v-flex>
-                            </v-layout>
-                        </v-container>
-                    </v-flex>
-                </v-layout>
-            </section>
-
-            <section id="about">
-                <v-parallax src="">
-                    <v-container name="about">
-                        <v-layout row class="my-5">
-                            <v-flex xs12>
-                                <v-card class="elevation-4">
-                                    <v-card-title primary-title class="layout justify-center pt-5">
-                                        <div class="text-xs-center">
-                                            <h2 class="header-type display-1">Who I Am</h2>
-                                            <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em>
-                                        </div>
-                                    </v-card-title>
-                                    <v-card-text>
-                                        <v-container grid-list-lg>
-                                            <v-layout row>
-                                                <v-flex xs6 class="text-xs-center">
-                                                    <h4 class="headline">owo who's this?</h4>
-                                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet nunc vel lacus elementum molestie sit amet sed elit.</div>
-                                                </v-flex>
-                                                <v-flex xs6 class="mx-auto">
-                                                    <bar-chart style="max-height: 250px;"></bar-chart>
-                                                </v-flex>
-                                            </v-layout>
-                                            <v-layout row>
-                                                <v-flex xs3 class="text-xs-center">
-                                                    <h4 class="headline">Part Designer</h4>
-                                                    <ul>
-                                                        <li>UX design</li>
-                                                        <li>UI design</li>
-                                                        <li>Interaction design</li>
-                                                        <li>Research</li>
-                                                        <li>Making it 'pop'</li>
-                                                    </ul>
-                                                    <h4 class="headline">Part Coder</h4>
-                                                    <ul>
-                                                        <li>Frontend development</li>
-                                                        <li>HTML / CSS</li>
-                                                        <li>JavaScript</li>
-                                                        <li>Eating pizza</li>
-                                                        <li>Swearing at computer</li>
-                                                    </ul>
-                                                </v-flex>
-                                                <v-flex xs6>
-                                                    <pie-chart></pie-chart>
-                                                </v-flex>
-                                                <v-flex xs3 class="text-xs-center">
-                                                    text
-                                                </v-flex>
-                                            </v-layout>
-                                        </v-container>
-                                    </v-card-text>
-                                </v-card>
-                            </v-flex>
-                        </v-layout>
-                    </v-container>
+                                        </v-card>
+                                    </v-flex>
+                                    <v-flex xs12 md6 lg4>
+                                        <v-card class="elevation-8">
+                                            <v-card-title primary-title class="layout justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
+                                                </svg>
+                                                <v-card-text class="text-xs-center">
+                                                    <h3 class="header-type headline">UI Design</h3>
+                                                    <div>I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                                </v-card-text>
+                                            </v-card-title>
+                                            <v-card-text>
+                                                <div class="title title-type">Design</div>
+                                                <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
+                                            </v-card-text>
+                                            <bar-chart class="design-barchart" :width="300" :height="200" />
+                                        </v-card>
+                                    </v-flex>
+                                    <v-flex xs12 lg4>
+                                        <v-card class="elevation-8">
+                                            <v-card-title primary-title class="layout justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
+                                                </svg>
+                                                <v-card-text class="text-xs-center">
+                                                    <h3 class="header-type headline">Game Development</h3>
+                                                    <div>I'm an <a href="http://billet-deaux.com/" target="_blank" rel="noopener">award-winning illustrator</a> making narrative-based games, too!</div>
+                                                </v-card-text>
+                                            </v-card-title>
+                                            <v-card-text>
+                                                <div class="title title-type">Design</div>
+                                                <div>UI, UX, 2D Assets, Concept & Environmental Art, Art Direction, Narrative Design</div>
+                                            </v-card-text>
+                                            <v-card-text>
+                                                <div class="title title-type">Languages & Tools</div>
+                                                <div>JS, Unity, Ink, Twine</div>
+                                            </v-card-text>
+                                        </v-card>
+                                    </v-flex>
+                                </v-layout>
+                            </v-container>
+                        </v-flex>
+                    </v-layout>
                 </v-parallax>
             </section>
 
@@ -179,27 +115,42 @@
                 </v-container>
             </section>
 
-            <section id="contact">
-                <v-container grid-list-xl>
-                    <v-layout row wrap justify-center class="my-5">
+            <section id="about">
+                <v-container name="about">
+                    <v-layout row class="my-5">
                         <v-flex xs12>
-                            <v-card class="elevation-0 transparent">
-                                <v-card-title primary-title class="layout justify-center">
-                                    <div class="header-type display-1">Get In Touch</div>
-                                </v-card-title>
-                                <v-card-text>
-                                    This portfolio is under development.  For resume & other inquires:
-                                </v-card-text>
-                                <v-list light class="transparent">
-                                    <v-list-tile>
-                                        <v-list-tile-action>
-                                            <v-icon light>email</v-icon>
-                                        </v-list-tile-action>
-                                        <v-list-tile-content>
-                                            <v-list-tile-title>hello@billet-deaux.com</v-list-tile-title>
-                                        </v-list-tile-content>
-                                    </v-list-tile>
-                                </v-list>
+                            <v-card class="elevation-4">
+                                <v-container>
+                                    <v-layout row wrap>
+                                        <v-flex xs12>
+                                            <v-card-title primary-title class="layout justify-center pt-5">
+                                                <div class="text-xs-center">
+                                                    <h2 class="header-type display-1">Who I Am</h2>
+                                                    <!-- <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em> -->
+                                                </div>
+                                            </v-card-title>
+                                        </v-flex>
+                                        <v-flex xs12 md4 class="mb-4">
+                                            <radar-chart :height="150"></radar-chart>
+                                        </v-flex>
+                                        <v-flex xs12 md8>
+                                            <div class="pb-1">Developer & designer by day, illustrator & powerlifter by night.  I'm currently the UI developer & designer at an international non-profit, working primarily in Wordpress & frameworks like VueJS.</div>
+                                            <div class="py-1">When I was a kid, I wanted to be an astronomer when I grew up, until I realized how much math was involved.  So I went to art school.  Then got into programming.  Go figure.</div>
+                                            <div class="pt-3"><em>This portfolio is a work in progress. For samples & more information, contact me:</em></div>
+                                            <v-list two-line light class="transparent">
+                                                <v-list-tile>
+                                                    <v-list-tile-action>
+                                                        <v-icon light>email</v-icon>
+                                                    </v-list-tile-action>
+                                                    <v-list-tile-content>
+                                                        <!-- <h4 class="headline">Have a cool project?  Let's talk:</h4> -->
+                                                        <v-list-tile-title>hello@billet-deaux.com</v-list-tile-title>
+                                                    </v-list-tile-content>
+                                                </v-list-tile>
+                                            </v-list>
+                                        </v-flex>
+                                    </v-layout>
+                                </v-container>
                             </v-card>
                         </v-flex>
                     </v-layout>
@@ -220,8 +171,10 @@
 </template>
 
 <script>
+    import Navigation from './assets/Navigation.vue'
     import PieChart from './assets/PieChart.js'
     import BarChart from './assets/BarChart.js'
+    import RadarChart from './assets/RadarChart.js'
     import Parallax from './assets/Parallax.vue'
     import Lightbox from './assets/Lightbox.vue'
     require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
@@ -229,29 +182,19 @@
     export default {
         name: 'app',
         components: {
+            Navigation,
             PieChart,
             BarChart,
+            RadarChart,
             Parallax,
             Lightbox
         },
         data () {
             return {
-                title: 'c.billadeau',
-                images: '',
-                navs: [
-                {
-                    name: 'Works',
-                    target: '#works'
+                options: {
+                    //licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
                 },
-                {
-                    name: 'About',
-                    target: '#about'
-                },
-                {
-                    name: 'Contact',
-                    target: '#contact'
-                }
-                ]
+                images: ''
             }
         }
     }

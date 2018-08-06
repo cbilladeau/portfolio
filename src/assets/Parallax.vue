@@ -1,6 +1,6 @@
 <template>
     <section :scroll="handleScroll">
-        <div class="hero-desktop">
+        <div class="hero">
             <img-blur class="layer layer-01"
                 data-type="parallax"
                 data-depth="0.20"
@@ -21,6 +21,11 @@
                 data-depth="1.00"
                 :image-source="('./public/hero_01.png')"
             ></img-blur>
+            <img-blur class="hero-mobile"
+                data-type="parallax"
+                data-depth="0.80"
+                :image-source="('./public/hero.png')"
+            ></img-blur>
             <div class="hero-header">
                 <div
                     data-type="parallax"
@@ -29,11 +34,11 @@
                     <h1 class="subheader-type light">Hi<span class="color-accent-1">,</span><br />I'm<br />Cour<span class="color-tertiary">.</span></h1>
                     <h2 class="header-type light">UI Designer<br />& Frontend Dev</h2>
                     <h3 class="title-type light">Located in Chicago, IL</h3>
-                    <div class="text-xs-center">
-                        <v-btn large flat icon class="color-accent-2" @click="$vuetify.goTo('#intro', scrollOptions)">
-                            <v-icon x-large>arrow_drop_down</v-icon>
-                        </v-btn>
-                    </div>
+                </div>
+                <div class="text-xs-center">
+                    <v-btn large flat icon class="color-accent-2" @click="$vuetify.goTo('#intro', scrollOptions)">
+                        <v-icon x-large>arrow_drop_down</v-icon>
+                    </v-btn>
                 </div>
             </div>
         </div>
@@ -72,7 +77,7 @@ export default {
     computed: {
         scrollOptions () {
             return {
-                duration: 1200,
+                duration: 1000,
                 offset: 0,
                 easing: 'easeInOutQuad'
             }
