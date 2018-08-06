@@ -3,6 +3,9 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
+*.sublime-project
+*.sublime-workspace
+*.map
 
 # Editor directories and files
 .idea
