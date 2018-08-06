@@ -1,0 +1,333 @@
+@charset 'UTF-8'
+
+$color-pack = false
+
+@import '~vuetify/src/stylus/main'
+
+
+// Variables
+
+body-font = 'Geo Sans'
+header-font = 'Typewriter Condensed'
+
+dark-color = rgb(17,11,25)
+dark-color-primary = rgba(0,0,0,0.87)
+dark-color-secondary = rgba(0,0,0,0.56)
+dark-color-tertiary = rgba(0,0,0,0.34)
+dark-color-border = rgba(0,0,0,0.12)
+
+light-color-primary = rgba(255,255,255,1)
+light-color-secondary = rgba(255,255,255,0.7)
+light-color-tertiary = rgba(255,255,255,0.5)
+light-color-border = rgba(255,255,255,0.3)
+
+color-white = rgb(255,255,255)
+
+color-primary = rgb(42,27,61)
+color-secondary = rgb(68,49,141)
+color-tertiary = rgb(130,101,167)
+
+color-accent-1 = rgb(216,63,135)
+color-accent-2 = rgb(233,128,116)
+
+
+// Type
+
+ @font-face
+   font-family Geo Sans
+   font-style normal
+   src url('~/public/GeosansLight.otf')
+
+ @font-face
+   font-family Geo Sans
+   font-style italic
+   src url('~/public/GeosansLight-Oblique.otf')
+   
+ @font-face
+   font-family Typewriter Condensed
+   font-style normal
+   src url('~/public/TypewriterCondensed.otf')
+
+ @font-face
+   font-family Typewriter Condensed
+   font-style bold
+   src url('~/public/TypewriterCondensed-Bold.otf')
+
+
+// Helpers
+
+.color-accent-1 {
+    color: color-accent-1 !important
+}
+
+.color-accent-2 {
+    color: color-accent-2 !important
+}
+
+.color-tertiary {
+    color: color-tertiary !important
+}
+
+// Styling
+
+body {
+    .application {
+        font-family: body-font, sans-serif
+        font-size: 1.25rem
+    
+        a {
+            color: color-accent-1
+            text-decoration: none
+            
+            &:hover,
+            &:focus,
+            &:active {
+                color: color-accent-2
+            }
+        }
+    }
+    
+    .header-type {
+        font-family: header-font, sans-serif
+        color: dark-color-secondary
+        text-transform: uppercase
+        
+        &.light {
+            color: light-color-secondary
+        }
+    }
+    
+    .subheader-type {
+        font-family: body-font, sans-serif
+        font-style: italic
+        font-weight: 300
+        color: dark-color-tertiary
+        
+        &.light {
+            color: light-color-tertiary
+        }
+    }
+    
+    .title-type {
+        font-style: italic
+        color: dark-color-secondary
+        line-height: 1.5 !important
+        
+        &.light {
+            color: light-color-secondary
+        }
+    }
+}
+
+.application {
+    &.theme--light {
+        background: transparent
+    }
+    
+    #navigation {
+        .btn--floating {
+            border-radius: 2px
+        }
+    }
+    
+    #hero {
+        height: 100vh !important
+        
+        .hero {
+            height: 100%
+            overflow: hidden
+            position: relative
+            
+            .layer {
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: bottom
+                width: 100%
+                height: 100%
+                position: fixed
+                z-index: -1
+
+                &-01 {
+                    background-color: color-primary
+                    background-size: 100% auto
+                }
+                &-02 {
+                    opacity: 0.7
+                }
+                &-03 {
+                    opacity: 0.8
+                }
+                &-04 {
+                    opacity: 0.9
+                }
+            }
+        }
+        
+        .hero-mobile {
+            display: none
+        }
+        
+        .hero-header {
+            position: relative
+            left: 45%
+            right: 0
+            padding: 6rem 3rem 0
+            background-color: alpha(color-primary, 0.8)
+            width: 37%
+            height: 100%
+            
+            .subheader-type {
+                color: light-color-primary
+                font-style: normal
+                font-size: 10rem
+                font-weight: 700
+                letter-spacing: 5px
+                line-height: 1
+                white-space: nowrap
+            }
+            
+            .header-type {
+                padding: 1rem 0
+                color: light-color-secondary
+                font-size: 4rem
+                letter-spacing: -1px
+                line-height: 1.15
+                white-space: nowrap
+            }
+            
+            .title-type {
+                padding-bottom: 1rem
+                font-size: 2rem
+                font-weight: 400
+                letter-spacing: 1px
+                white-space: nowrap
+            }
+            
+            .btn {
+                position: absolute
+                bottom: 0
+                left: 45%
+            }
+        }
+        
+        @media screen and (max-width: 1263px) {
+            .hero-header {
+                left: 40%
+                width: 43%
+            }
+        }
+        @media screen and (max-width: 959px) {
+            .hero .layer {
+                display: none
+            }
+            .hero-mobile {
+                display: block
+                background-color: color-primary
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: bottom
+                width: 100%
+                height: 100%
+                position: fixed
+                z-index: -1
+            }
+            .hero-header {
+                left: 15%
+                width: 70%
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .hero-header {
+                left: 10%
+                width: 80%
+                
+                .subheader-type {
+                    font-size: 8rem
+                }
+                .header-type {
+                    font-size: 3rem
+                }
+                .title-type {
+                    font-size: 2rem
+                }
+            }
+        }
+    }
+    
+    #intro {
+        background: color-secondary
+        color: light-color-primary
+        padding: 4rem 0 8rem
+    }
+    
+    #skills {
+        background-color: color-tertiary
+        align-items: stretch
+        
+        .parallax {
+            overflow: visible
+            height: auto !important
+            padding-bottom: 2rem
+            
+            .parallax__image {
+                opacity: 0.25 !important
+                min-height: auto
+            }
+            @media screen and (max-width: 1263px) {
+                .parallax__image {
+                    display: none !important
+                }
+            }
+        }
+        
+        .skills-container {
+            margin-top: -6rem
+        }
+        
+        .card {
+            height: 100% !important
+            padding: 3rem 2rem
+            
+            .card__title {
+                padding: 0
+                margin: 0
+                display: block
+            }
+            
+            .card__text {
+                padding: 0.5rem 0
+            }
+        
+            .skill-icon {
+                height: 72px
+                width: 100%
+                fill: color-tertiary
+            }
+        }
+        
+        .design-barchart {
+            padding-top: 1.5rem
+            padding-right: 0.5rem
+        }
+    }
+    
+    #works {
+        display: none //remove later
+        background: color-accent-1
+        color: light-color-primary
+    }
+    
+    #about {
+        background: light-color-primary
+        // background: color-tertiary
+        align-items: stretch
+        
+        .parallax {
+            height: 100% !important
+        }
+        
+        #horizontalbar-chart {
+            transition: background-color 0.2s ease-in-out
+        }
+    }
+}
