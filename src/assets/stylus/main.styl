@@ -21,8 +21,6 @@ light-color-secondary = rgba(255,255,255,0.7)
 light-color-tertiary = rgba(255,255,255,0.5)
 light-color-border = rgba(255,255,255,0.3)
 
-color-white = rgb(255,255,255)
-
 color-primary = rgb(42,27,61)
 color-secondary = rgb(68,49,141)
 color-tertiary = rgb(130,101,167)
@@ -179,7 +177,7 @@ body {
             .subheader-type {
                 color: light-color-primary
                 font-style: normal
-                font-size: 10rem
+                font-size: 16rem
                 font-weight: 700
                 letter-spacing: 5px
                 line-height: 1
@@ -189,7 +187,7 @@ body {
             .header-type {
                 padding: 1rem 0
                 color: light-color-secondary
-                font-size: 4rem
+                font-size: 7rem
                 letter-spacing: -1px
                 line-height: 1.15
                 white-space: nowrap
@@ -197,7 +195,7 @@ body {
             
             .title-type {
                 padding-bottom: 1rem
-                font-size: 2rem
+                font-size: 5rem
                 font-weight: 400
                 letter-spacing: 1px
                 white-space: nowrap
@@ -210,10 +208,36 @@ body {
             }
         }
         
+        @media screen and (max-width: 1903px) {            
+            .hero-header {
+                left: 45%
+                width: 45%
+                
+                .subheader-type {
+                    font-size: 14rem
+                }
+                .header-type {
+                    font-size: 6rem
+                }
+                .title-type {
+                    font-size: 4rem
+                }
+            }
+        }
         @media screen and (max-width: 1263px) {
             .hero-header {
                 left: 40%
                 width: 43%
+                
+                .subheader-type {
+                    font-size: 10rem
+                }
+                .header-type {
+                    font-size: 4rem
+                }
+                .title-type {
+                    font-size: 2rem
+                }
             }
         }
         @media screen and (max-width: 959px) {
