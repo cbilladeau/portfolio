@@ -35,10 +35,8 @@
                                                     <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
                                                 </v-card-text>
                                             </v-card-title>
-                                            <v-card-text>
-                                                <div class="title title-type">Languages</div>
-                                                <div>HTML5, CSS, Sass, Less, Stylus, JS, jQuery, VueJS, PHP</div>
-                                            </v-card-text>
+                                            <div class="title title-type">Languages</div>
+                                            <code-bar-chart class="code-bar-chart" :width="250" :height="250" />
                                             <v-card-text>
                                                 <div class="title title-type">CMS & Frameworks</div>
                                                 <div>Wordpress, Bootstrap, Material Design</div>
@@ -61,10 +59,13 @@
                                                 </v-card-text>
                                             </v-card-title>
                                             <v-card-text>
-                                                <div class="title title-type">Design</div>
+                                                <div class="title title-type">Skills</div>
                                                 <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
                                             </v-card-text>
-                                            <bar-chart class="design-barchart" :width="300" :height="200" />
+                                            <v-card-text>
+                                                <div class="title title-type">Tools</div>
+                                                <div>UXPin, Axure, Photoshop, Illustrator, InDesign</div>
+                                            </v-card-text>
                                         </v-card>
                                     </v-flex>
                                     <v-flex xs12 lg4>
@@ -117,41 +118,33 @@
 
             <section id="about">
                 <v-container name="about">
-                    <v-layout row class="my-5">
+                    <v-layout row wrap class="my-5">
                         <v-flex xs12>
-                            <v-card class="elevation-4">
-                                <v-container>
-                                    <v-layout row wrap>
-                                        <v-flex xs12>
-                                            <v-card-title primary-title class="layout justify-center pt-5">
-                                                <div class="text-xs-center">
-                                                    <h2 class="header-type display-1">Who I Am</h2>
-                                                    <!-- <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em> -->
-                                                </div>
-                                            </v-card-title>
-                                        </v-flex>
-                                        <v-flex xs12 md4 class="mb-4">
-                                            <radar-chart :height="150"></radar-chart>
-                                        </v-flex>
-                                        <v-flex xs12 md8>
-                                            <div class="pb-1">Developer & designer by day, illustrator & powerlifter by night.  I'm currently the UI developer & designer at an international non-profit, working primarily in Wordpress & frameworks like VueJS.</div>
-                                            <div class="py-1">When I was a kid, I wanted to be an astronomer when I grew up, until I realized how much math was involved.  So I went to art school.  Then got into programming.  Go figure.</div>
-                                            <div class="pt-3"><em>This portfolio is a work in progress. For samples & more information, contact me:</em></div>
-                                            <v-list two-line light class="transparent">
-                                                <v-list-tile>
-                                                    <v-list-tile-action>
-                                                        <v-icon light>email</v-icon>
-                                                    </v-list-tile-action>
-                                                    <v-list-tile-content>
-                                                        <!-- <h4 class="headline">Have a cool project?  Let's talk:</h4> -->
-                                                        <v-list-tile-title>hello@billet-deaux.com</v-list-tile-title>
-                                                    </v-list-tile-content>
-                                                </v-list-tile>
-                                            </v-list>
-                                        </v-flex>
-                                    </v-layout>
-                                </v-container>
-                            </v-card>
+                            <div class="layout justify-center pt-5">
+                                <div class="text-xs-center">
+                                    <h2 class="header-type display-1 my-2">Who I Am</h2>
+                                    <!-- <em class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</em> -->
+                                </div>
+                            </div>
+                        </v-flex>
+                        <v-flex xs12 md4 class="mb-4">
+                            <radar-chart :height="175" />
+                        </v-flex>
+                        <v-flex xs12 md8>
+                            <div class="pb-1">Developer & designer by day, illustrator & powerlifter by night.  I'm currently the UI developer & designer at an international non-profit, working primarily in Wordpress & frameworks like VueJS.</div>
+                            <div class="py-1">When I was a kid, I wanted to be an astronomer when I grew up, until I realized how much math was involved.  So I went to art school.  Then got into programming.  Go figure.</div>
+                            <div class="pt-3"><em>This portfolio is a work in progress. For samples & more information, contact me:</em></div>
+                            <v-list two-line light class="transparent">
+                                <v-list-tile>
+                                    <v-list-tile-action>
+                                        <v-icon light>email</v-icon>
+                                    </v-list-tile-action>
+                                    <v-list-tile-content>
+                                        <!-- <h4 class="headline">Have a cool project?  Let's talk:</h4> -->
+                                        <v-list-tile-title>hello@billet-deaux.com</v-list-tile-title>
+                                    </v-list-tile-content>
+                                </v-list-tile>
+                            </v-list>
                         </v-flex>
                     </v-layout>
                 </v-container>
@@ -171,12 +164,13 @@
 </template>
 
 <script>
-    import Navigation from './assets/Navigation.vue'
-    import PieChart from './assets/PieChart.js'
-    import BarChart from './assets/BarChart.js'
-    import RadarChart from './assets/RadarChart.js'
-    import Parallax from './assets/Parallax.vue'
-    import Lightbox from './assets/Lightbox.vue'
+    import Navigation from './assets/components/Navigation.vue'
+    import PieChart from './assets/components/PieChart.js'
+    import CodeBarChart from './assets/components/CodeBarChart.js'
+    import DesignBarChart from './assets/components/DesignBarChart.js'
+    import RadarChart from './assets/components/RadarChart.js'
+    import Parallax from './assets/components/Parallax.vue'
+    import Lightbox from './assets/components/Lightbox.vue'
     require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
 
     export default {
@@ -184,7 +178,8 @@
         components: {
             Navigation,
             PieChart,
-            BarChart,
+            CodeBarChart,
+            DesignBarChart,
             RadarChart,
             Parallax,
             Lightbox
