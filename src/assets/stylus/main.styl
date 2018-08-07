@@ -67,10 +67,13 @@ color-accent-2 = rgb(233,128,116)
 }
 
 // Styling
+html {
+    font-size: 16px !important
+}
 
 body {
     .application {
-        font-family: body-font, sans-serif
+        font-family: body-font, sans-serif !important
         font-size: 1.25rem
     
         a {
@@ -85,8 +88,12 @@ body {
         }
     }
     
+    .headline, .title, .subheading {
+        font-family: body-font, sans-serif !important
+    }
+    
     .header-type {
-        font-family: header-font, sans-serif
+        font-family: header-font, sans-serif !important
         color: dark-color-secondary
         text-transform: uppercase
         
@@ -96,7 +103,7 @@ body {
     }
     
     .subheader-type {
-        font-family: body-font, sans-serif
+        font-family: body-font, sans-serif !important
         font-style: italic
         font-weight: 300
         color: dark-color-tertiary
@@ -201,7 +208,7 @@ body {
                 white-space: nowrap
             }
             
-            .btn {
+            .v-btn {
                 position: absolute
                 bottom: 0
                 left: 45%
@@ -214,13 +221,13 @@ body {
                 width: 45%
                 
                 .subheader-type {
-                    font-size: 14rem
+                    font-size: 12rem
                 }
                 .header-type {
-                    font-size: 6rem
+                    font-size: 4rem
                 }
                 .title-type {
-                    font-size: 3rem
+                    font-size: 2.5rem
                 }
             }
         }
@@ -258,12 +265,6 @@ body {
             .hero-header {
                 left: 15%
                 width: 70%
-            }
-        }
-        @media screen and (max-width: 600px) {
-            .hero-header {
-                left: 10%
-                width: 80%
                 
                 .subheader-type {
                     font-size: 8rem
@@ -273,6 +274,22 @@ body {
                 }
                 .title-type {
                     font-size: 2rem
+                }
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .hero-header {
+                left: 10%
+                width: 80%
+                
+                .subheader-type {
+                    font-size: 6rem
+                }
+                .header-type {
+                    font-size: 2rem
+                }
+                .title-type {
+                    font-size: 1.5rem
                 }
             }
         }
@@ -288,17 +305,17 @@ body {
         background-color: color-tertiary
         align-items: stretch
         
-        .parallax {
+        .v-parallax {
             overflow: visible
             height: auto !important
             padding-bottom: 2rem
             
-            .parallax__image {
+            .v-parallax__image {
                 opacity: 0.25 !important
                 min-height: auto
             }
             @media screen and (max-width: 1263px) {
-                .parallax__image {
+                .v-parallax__image {
                     display: none !important
                 }
             }
@@ -308,17 +325,17 @@ body {
             margin-top: -6rem
         }
         
-        .card {
+        .v-card {
             height: 100% !important
             padding: 3rem 2rem
             
-            .card__title {
+            .v-card__title {
                 padding: 0
                 margin: 0
                 display: block
             }
             
-            .card__text {
+            .v-card__text {
                 padding: 0.5rem 0
             }
         

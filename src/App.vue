@@ -2,7 +2,7 @@
     <v-app>
         
         <v-content>
-            <!-- <navigation id="navigation" /> -->
+            <navigation id="navigation" />
             <parallax id="hero" />
 
             <section id="intro">
@@ -10,9 +10,7 @@
                     <v-flex xs12>
                         <div class="text-xs-center">
                             <h2 class="header-type light display-1">What I Do</h2>
-                            <span class="headline">
-                                I make & break stuff from my studio in Chicago, IL.
-                            </span>
+                            <span class="headline">I make & break stuff from my studio in Chicago, IL.</span>
                         </div>
                     </v-flex>
                 </v-layout>
