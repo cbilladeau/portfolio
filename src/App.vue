@@ -2,7 +2,7 @@
     <v-app>
         
         <v-content>
-            <navigation id="navigation" />
+            <!-- <navigation id="navigation" /> -->
             <parallax id="hero" />
 
             <section id="intro">
@@ -107,9 +107,7 @@
                         </v-flex>
                     </v-layout>
                     <v-layout row>
-                        <lightbox
-                            :images="images">
-                        </lightbox>
+                        <gallery />
                     </v-layout>
                 </v-container>
             </section>
@@ -168,8 +166,7 @@
     import DesignBarChart from './assets/components/DesignBarChart.js'
     import RadarChart from './assets/components/RadarChart.js'
     import Parallax from './assets/components/Parallax.vue'
-    import Lightbox from './assets/components/Lightbox.vue'
-    require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
+    import Gallery from './assets/components/Gallery.vue'
 
     export default {
         name: 'app',
@@ -180,14 +177,13 @@
             DesignBarChart,
             RadarChart,
             Parallax,
-            Lightbox
+            Gallery
         },
         data () {
             return {
                 options: {
                     //licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
-                },
-                images: ''
+                }
             }
         }
     }
