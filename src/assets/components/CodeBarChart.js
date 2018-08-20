@@ -1,5 +1,7 @@
 import {HorizontalBar} from 'vue-chartjs'
 
+require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
+
 export default {
     extends: HorizontalBar,
     mounted () {

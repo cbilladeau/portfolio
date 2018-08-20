@@ -2,7 +2,7 @@
 
 $color-pack = false
 
-@import '~vuetify/src/stylus/main'
+@import '~vuetify/src/stylus/app.styl'
 
 
 // Variables
@@ -67,13 +67,14 @@ color-accent-2 = rgb(233,128,116)
 }
 
 // Styling
+
 html {
-    font-size: 16px !important
+    font-size: 16px
 }
 
-body {
+body {    
     .application {
-        font-family: body-font, sans-serif !important
+        font-family: body-font, sans-serif
         font-size: 1.25rem
     
         a {
@@ -136,7 +137,7 @@ body {
     }
     
     #hero {
-        height: 100vh !important
+        height: 100vh
         
         .hero {
             height: 100%
@@ -356,6 +357,87 @@ body {
     #works {
         background: color-accent-1
         color: light-color-primary
+        
+        .lightbox {
+            position: fixed
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background: dark-color-secondary
+            width: 100%
+            height: 100%
+            z-index: 1
+        }
+        .lightbox__thumbnail {
+            display: block
+        }
+        .lightbox__thumbnail img {
+            width: 100%
+            height: 100%
+        }
+        .lightbox__close {
+            position: fixed
+            right: 0
+            top: 0
+            padding: 1rem
+            font-size: 1.5rem
+            cursor: pointer
+            color: light-color-primary
+            font-weight: 700
+            width: 4rem
+            height: 4rem
+        }
+        .lightbox__arrow--invisible {
+            visibility: hidden
+        }
+        .lightbox__element {
+            height: 100%
+            width: 100%
+        }
+        .lightbox__arrow {
+            padding: 0 2rem
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+        }
+        .lightbox__arrow svg {
+            fill: light-color-primary
+            pointer-events: none
+        }
+        .lightbox__image {
+            flex: 1
+        }
+        .lightbox__image img {
+            max-height: 100vh
+            max-width: 100%
+            display: block
+            margin: auto
+        }
+        @media screen and (max-width: 720px) {
+            .lightbox__arrow {
+                padding: 0 1rem
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .lightbox__element {
+                position: relative
+            }
+            .lightbox__arrow {
+                position: absolute
+                padding: 0 2rem
+                height: 100%
+            }
+            .lightbox__arrow--right {
+                right: 0
+                background: linear-gradient(to right, transparent, dark-color-tertiary)
+            }
+            .lightbox__arrow--left {
+                left: 0
+                background: linear-gradient(to left, transparent, dark-color-tertiary)
+            }
+        }
     }
     
     #about {

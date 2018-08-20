@@ -1,5 +1,7 @@
 import {Bar} from 'vue-chartjs'
 
+require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
+
 export default {
     extends: Bar,
     mounted () {
