@@ -1,32 +1,53 @@
 @charset 'UTF-8'
 
+// Vueitfy Variable Overrides
+
 $color-pack = false
 
-@import '~vuetify/src/stylus/app.styl'
+$body-font-family = 'Geo Sans', sans-serif
+$header-font-family = 'Typewriter Condensed', serif
+
+$font-size-root = 18px
+
+$headings = {
+    h1: { size: 12rem, weight: 700, line-height: 1, letter-spacing: 0.5rem, font-family: $body-font-family },
+    h2: { size: 5rem, weight: 300, line-height: 1.1, letter-spacing: -0.5rem, font-family: $header-font-family },
+    h3: { size: 2rem, weight: 300, line-height: 1.15, letter-spacing: normal, font-family: $header-font-family },
+    h4: { size: 1.75rem, weight: 300, line-height: 1.2, letter-spacing: normal, font-family: $header-font-family },
+    h5: { size: 1.5rem, weight: 300, line-height: 1.35, letter-spacing: normal, font-family: $body-font-family },
+    h6: { size: 1.25rem, weight: 300, line-height: 1.35, letter-spacing: normal, font-family: $body-font-family },
+    subheading: { size: 1.25rem, weight: 300 },
+    body-2: { size: 1rem, weight: 300 },
+    body-1: { size: 0.9rem, weight: 300 },
+    caption: { size: 0.9rem, weight: 300 },
+    button: { size: 0.9rem, weight: 500 }
+}
+
+@import '~vuetify/src/stylus/app'
 
 
 // Variables
 
-body-font = 'Geo Sans'
-header-font = 'Typewriter Condensed'
+body-font-family = 'Geo Sans', sans-serif
+header-font-family = 'Typewriter Condensed', serif
 
-dark-color = rgb(17,11,25)
 dark-color-primary = rgba(0,0,0,0.87)
 dark-color-secondary = rgba(0,0,0,0.56)
-dark-color-tertiary = rgba(0,0,0,0.34)
+dark-color-tertiary = rgba(0,0,0,0.38)
 dark-color-border = rgba(0,0,0,0.12)
 
 light-color-primary = rgba(255,255,255,1)
 light-color-secondary = rgba(255,255,255,0.7)
 light-color-tertiary = rgba(255,255,255,0.5)
-light-color-border = rgba(255,255,255,0.3)
+light-color-border = rgba(255,255,255,0.12)
 
 color-primary = rgb(42,27,61)
 color-secondary = rgb(68,49,141)
-color-tertiary = rgb(130,101,167)
-
-color-accent-1 = rgb(216,63,135)
-color-accent-2 = rgb(233,128,116)
+color-accent = rgb(216,63,135)
+color-error = rgb(130,101,167)
+color-warning = rgb(233,128,116)
+color-success = rgb(0, 191, 165)
+color-info = rgb(0, 184, 212)
 
 
 // Type
@@ -54,79 +75,88 @@ color-accent-2 = rgb(233,128,116)
 
 // Helpers
 
-.color-accent-1 {
-    color: color-accent-1 !important
+.color-accent {
+    color: color-accent !important
 }
 
-.color-accent-2 {
-    color: color-accent-2 !important
+.color-warning {
+    color: color-warning !important
 }
 
-.color-tertiary {
-    color: color-tertiary !important
+.color-error {
+    color: color-error !important
 }
 
 // Styling
 
-html {
-    font-size: 16px
-}
-
 body {    
     .application {
-        font-family: body-font, sans-serif
-        font-size: 1.25rem
-    
         a {
-            color: color-accent-1
+            color: color-accent
             text-decoration: none
             
             &:hover,
             &:focus,
             &:active {
-                color: color-accent-2
+                color: color-warning
+            }
+        }
+        
+        .display-3, .display-2, .display-1 {
+            text-transform: uppercase
+        }
+        
+        .display-2, .display-1 {
+            color: dark-color-secondary
+            
+            &.light {
+                color: light-color-secondary
+            }
+        }
+        
+        .title, .subheading {
+            font-style: italic
+            color: dark-color-tertiary
+            
+            &.light {
+                color: light-color-tertiary
             }
         }
     }
     
-    .headline, .title, .subheading {
-        font-family: body-font, sans-serif !important
-    }
-    
     .header-type {
-        font-family: header-font, sans-serif !important
-        color: dark-color-secondary
-        text-transform: uppercase
+        //font-family: header-font-family !important
+        //color: dark-color-secondary
+        //text-transform: uppercase
         
         &.light {
-            color: light-color-secondary
+            //color: light-color-secondary
         }
     }
     
     .subheader-type {
-        font-family: body-font, sans-serif !important
-        font-style: italic
-        font-weight: 300
-        color: dark-color-tertiary
+        //font-style: italic
+        //font-weight: 300
+        //color: dark-color-tertiary
         
         &.light {
-            color: light-color-tertiary
+            //color: light-color-tertiary
         }
     }
     
     .title-type {
-        font-style: italic
-        color: dark-color-secondary
-        line-height: 1.5 !important
+        //font-style: italic
+        //color: dark-color-secondary
+        //line-height: 1.5 !important
         
         &.light {
-            color: light-color-secondary
+            //color: light-color-secondary
         }
     }
 }
 
 .application {
-    &.theme--light {
+    &.theme--dark {
         background: transparent
     }
     
@@ -183,29 +213,29 @@ body {
             height: 100%
             
             .subheader-type {
-                color: light-color-primary
-                font-style: normal
-                font-size: 16rem
-                font-weight: 700
-                letter-spacing: 5px
-                line-height: 1
+                //color: light-color-primary
+                // font-style: normal
+                // font-size: 16rem
+                // font-weight: 700
+                // letter-spacing: 5px
+                // line-height: 1
                 white-space: nowrap
             }
             
             .header-type {
                 padding: 1rem 0
-                color: light-color-secondary
-                font-size: 7rem
-                letter-spacing: -1px
-                line-height: 1.15
+                //color: light-color-secondary
+                // font-size: 7rem
+                // letter-spacing: -1px
+                // line-height: 1.15
                 white-space: nowrap
             }
             
             .title-type {
                 padding-bottom: 1rem
-                font-size: 3rem
-                font-weight: 400
-                letter-spacing: 1px
+                // font-size: 3rem
+                // font-weight: 400
+                // letter-spacing: 1px
                 white-space: nowrap
             }
             
@@ -221,15 +251,15 @@ body {
                 left: 45%
                 width: 45%
                 
-                .subheader-type {
-                    font-size: 12rem
-                }
-                .header-type {
-                    font-size: 4rem
-                }
-                .title-type {
-                    font-size: 2.5rem
-                }
+                // .subheader-type {
+                //     font-size: 12rem
+                // }
+                // .header-type {
+                //     font-size: 4rem
+                // }
+                // .title-type {
+                //     font-size: 2.5rem
+                // }
             }
         }
         @media screen and (max-width: 1263px) {
@@ -237,15 +267,15 @@ body {
                 left: 40%
                 width: 43%
                 
-                .subheader-type {
-                    font-size: 10rem
-                }
-                .header-type {
-                    font-size: 4rem
-                }
-                .title-type {
-                    font-size: 2rem
-                }
+                // .subheader-type {
+                //     font-size: 10rem
+                // }
+                // .header-type {
+                //     font-size: 4rem
+                // }
+                // .title-type {
+                //     font-size: 2rem
+                // }
             }
         }
         @media screen and (max-width: 959px) {
@@ -267,15 +297,15 @@ body {
                 left: 15%
                 width: 70%
                 
-                .subheader-type {
-                    font-size: 8rem
-                }
-                .header-type {
-                    font-size: 3rem
-                }
-                .title-type {
-                    font-size: 2rem
-                }
+                // .subheader-type {
+                //     font-size: 8rem
+                // }
+                // .header-type {
+                //     font-size: 3rem
+                // }
+                // .title-type {
+                //     font-size: 2rem
+                // }
             }
         }
         @media screen and (max-width: 600px) {
@@ -283,15 +313,15 @@ body {
                 left: 10%
                 width: 80%
                 
-                .subheader-type {
-                    font-size: 6rem
-                }
-                .header-type {
-                    font-size: 2rem
-                }
-                .title-type {
-                    font-size: 1.5rem
-                }
+                // .subheader-type {
+                //     font-size: 6rem
+                // }
+                // .header-type {
+                //     font-size: 2rem
+                // }
+                // .title-type {
+                //     font-size: 1.5rem
+                // }
             }
         }
     }
@@ -303,7 +333,7 @@ body {
     }
     
     #skills {
-        background-color: color-tertiary
+        background-color: color-error
         align-items: stretch
         
         .v-parallax {
@@ -329,6 +359,7 @@ body {
         .v-card {
             height: 100% !important
             padding: 3rem 2rem
+            //background-color: white
             
             .v-card__title {
                 padding: 0
@@ -343,7 +374,7 @@ body {
             .skill-icon {
                 height: 72px
                 width: 100%
-                fill: color-tertiary
+                fill: color-error
             }
         }
         
@@ -355,7 +386,7 @@ body {
     }
     
     #works {
-        background: color-accent-1
+        background: color-accent
         color: light-color-primary
         
         .lightbox {
