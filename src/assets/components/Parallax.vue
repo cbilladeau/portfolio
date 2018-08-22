@@ -1,6 +1,6 @@
 <template>
     <section :scroll="handleScroll">
-        <div class="hero">
+        <v-layout dark class="hero">
             <img-blur class="layer layer-01"
                 data-type="parallax"
                 data-depth="0.20"
@@ -31,17 +31,17 @@
                     data-type="parallax"
                     data-depth="0.50"
                 >
-                    <h1 class="subheader-type light">Hi<span class="color-accent-1">,</span><br />I'm<br />Cour<span class="color-tertiary">.</span></h1>
-                    <h2 class="header-type light">UI Designer<br />& Frontend Dev</h2>
-                    <h3 class="title-type light">Located in Chicago, IL</h3>
+                    <h1 class="display-4">Hi<span class="color-accent">,</span><br />I'm<br />Cour<span class="color-error">.</span></h1>
+                    <h2 class="display-3">UI Designer<br />& Frontend Dev</h2>
+                    <div class="display-2 light">Located in Chicago, IL</div>
                 </div>
                 <div class="text-xs-center">
-                    <v-btn large flat icon class="color-accent-2" @click="$vuetify.goTo('#intro', scrollOptions)">
+                    <v-btn large flat icon class="color-warning" @click="$vuetify.goTo('#intro', scrollOptions)">
                         <v-icon x-large>arrow_drop_down</v-icon>
                     </v-btn>
                 </div>
             </div>
-        </div>
+        </v-layout>
     </section>
 </template>
 
