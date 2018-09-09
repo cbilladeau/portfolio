@@ -17,24 +17,36 @@ export default {
             id: 'chartjs-plugin-datalabels'
         })
         this.renderChart({
-            labels: ['HTML5', 'CSS', 'Wordpress', 'SASS, LESS, Stylus', 'JS', 'jQuery', 'VueJS', 'PHP'],
+            labels: ['HTML5', 'CSS', 'SASS, LESS, Stylus', 'Wordpress', 'JS', 'jQuery', 'VueJS', 'PHP'],
             datasets: [{
-                backgroundColor: 'rgba(68, 49, 141, 0.9)',
-                hoverBackgroundColor: 'rgba(68, 49, 141, 1)',
-                label: '# of Years',
-                //yAxisID: 'years-axis',
-                data: [5, 5, 5, 2, 2, 3, 1, 2],
+                backgroundColor: this.gradient,
+                hoverBackgroundColor: this.gradientHover,
+                data: [100, 95, 80, 80, 65, 70, 50, 50],
                 datalabels: {
-                    display: false
+                    font: {
+                        family: 'Geo Sans, sans-serif',
+                        size: 16
+                    },
+                    color: 'rgba(255,255,255,1)',
+                    align: 'right',
+                    anchor: 'start',
+                    formatter: function(value, context) {
+                        return context.chart.data.labels[context.dataIndex];
+                    }
                 }
             }, {
-                backgroundColor: 'rgba(216, 63 , 135, 0.80)',
-                hoverBackgroundColor: 'rgba(216, 63 , 135, 1)',
-                label: '# of Projects',
-                //yAxisID: 'projects-axis',
-                data: [7, 7, 4, 5, 3, 3, 2, 1],
+                backgroundColor: 'rgba(0,0,0,0.12)',
+                hoverBackgroundColor: 'rgba(0,0,0,0.12)',
+                data: [0, 5, 20, 20, 35, 30, 50, 50],
                 datalabels: {
-                    display: false
+                    display: false,
+                }
+            }, {
+                backgroundColor: 'rgba(0,0,0,0.12)',
+                hoverBackgroundColor: 'rgba(0,0,0,0.12)',
+                data: [100, 100, 100, 100, 100, 100, 100, 100],
+                datalabels: {
+                    display: false,
                 }
             }],
         }, {
@@ -54,25 +66,21 @@ export default {
                 xAxes: [{
                     stacked: true,
                     ticks: {
-                        display: true,
-                        stepSize: 1,
+                        display: false,
                         min: 0,
-                        max: 12,
+                        max: 100,
                     },
                     pointLabel: {
                         display: true
                     },
                     gridLines: {
-                        display: true,
-                        lineWidth: 4,
-                        color: 'rgba(255, 255, 255, 1)',
-                        zeroLineColor: 'rgba(255, 255, 255, 1)',
+                        display: false,
                         drawBorder: false
                     }
                 }]
             },
             legend: {
-                display: true
+                display: false
             },
             title: {
                 display: false
