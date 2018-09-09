@@ -22,7 +22,7 @@
                         <v-flex xs12 class="skills-container">
                             <v-container grid-list-xl>
                                 <v-layout row wrap>
-                                    <v-flex xs12 md6 lg4>
+                                    <v-flex xs12 lg4>
                                         <v-card light class="elevation-8">
                                             <v-card-title primary-title class="layout justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
@@ -33,7 +33,7 @@
                                                     <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
                                                 </v-card-text>
                                             </v-card-title>
-                                            <div class="title">Languages</div>
+                                            <!-- <div class="title">Languages</div> -->
                                             <code-bar-chart class="code-bar-chart" :width="250" :height="250" />
                                             <v-card-text>
                                                 <div class="title">CMS & Frameworks</div>
@@ -58,7 +58,7 @@
                                             </v-card-title>
                                             <v-card-text>
                                                 <div class="title">Skills</div>
-                                                <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Icons & Logos</div>
+                                                <div>UX, UI, Wireframing, Mockups, Web, Mobile, Apps, Illustration, Icons & Logos</div>
                                             </v-card-text>
                                             <v-card-text>
                                                 <div class="title">Tools</div>
@@ -66,7 +66,7 @@
                                             </v-card-text>
                                         </v-card>
                                     </v-flex>
-                                    <v-flex xs12 lg4>
+                                    <v-flex xs12 md6 lg4>
                                         <v-card light class="elevation-8">
                                             <v-card-title primary-title class="layout justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
