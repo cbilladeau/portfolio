@@ -3,7 +3,7 @@ import { generateChart } from 'vue-chartjs'
 
 require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
 
-Chart.defaults.customRadar = Chart.defaults.radar;
+Chart.defaults.customRadar = Chart.defaults.radar
 Chart.controllers.customRadar = Chart.controllers.radar.extend({})
 
 const CustomRadar = generateChart('custom-radar', 'customRadar')
