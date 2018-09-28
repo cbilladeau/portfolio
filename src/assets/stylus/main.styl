@@ -1,54 +1,93 @@
 @charset 'UTF-8'
 
+// Vueitfy Variable Overrides
+
 $color-pack = false
 
-@import '~vuetify/src/stylus/main'
+$body-font-family = 'Geo Sans', sans-serif
+$header-font-family = 'Typewriter Condensed', serif
+
+$font-size-root = 18px
+
+$headings = {
+    h1: { size: 12rem, weight: 700, line-height: 1, letter-spacing: 0.5rem, font-family: $body-font-family },
+    h2: { size: 5rem, weight: 300, line-height: 1.1, letter-spacing: -0.25rem, font-family: $header-font-family },
+    h3: { size: 2rem, weight: 300, line-height: 1.15, letter-spacing: normal, font-family: $header-font-family },
+    h4: { size: 1.75rem, weight: 300, line-height: 1.2, letter-spacing: normal, font-family: $header-font-family },
+    h5: { size: 1.5rem, weight: 300, line-height: 1.35, letter-spacing: normal, font-family: $body-font-family },
+    h6: { size: 1.25rem, weight: 300, line-height: 1.35, letter-spacing: normal, font-family: $body-font-family },
+    subheading: { size: 1.25rem, weight: 300 },
+    body-2: { size: 1rem, weight: 300 },
+    body-1: { size: 0.9rem, weight: 300 },
+    caption: { size: 0.9rem, weight: 300 },
+    button: { size: 0.9rem, weight: 500 }
+}
+
+@import '~vuetify/src/stylus/app'
 
 
 // Variables
 
-body-font = 'Geo Sans'
-header-font = 'Typewriter Condensed'
+body-font-family = 'Geo Sans', sans-serif
+header-font-family = 'Typewriter Condensed', serif
 
-dark-color = rgb(17,11,25)
 dark-color-primary = rgba(0,0,0,0.87)
 dark-color-secondary = rgba(0,0,0,0.56)
-dark-color-tertiary = rgba(0,0,0,0.34)
+dark-color-tertiary = rgba(0,0,0,0.38)
 dark-color-border = rgba(0,0,0,0.12)
 
 light-color-primary = rgba(255,255,255,1)
 light-color-secondary = rgba(255,255,255,0.7)
 light-color-tertiary = rgba(255,255,255,0.5)
-light-color-border = rgba(255,255,255,0.3)
-
-color-white = rgb(255,255,255)
+light-color-border = rgba(255,255,255,0.12)
 
 color-primary = rgb(42,27,61)
 color-secondary = rgb(68,49,141)
-color-tertiary = rgb(130,101,167)
+color-accent = rgb(216,63,135)
+color-error = rgb(130,101,167)
+color-warning = rgb(233,128,116)
+color-success = rgb(0, 191, 165)
+color-info = rgb(0, 184, 212)
 
-color-accent-1 = rgb(216,63,135)
-color-accent-2 = rgb(233,128,116)
 
+// Mixins
 
-// Type
+sizephone()
+    @media (max-width: 599px)
+        {block}
 
- @font-face
+sizetabletp()
+    @media (min-width: 600px)
+        {block}
+
+sizetabletl()
+    @media (min-width: 900px)
+        {block}
+
+sizedesktop()
+    @media (min-width: 1200px)
+        {block}
+        
+sizexldesktop()
+    @media (min-width: 1800px)
+        {block}
+
+@font-face
    font-family Geo Sans
    font-style normal
    src url('~/public/GeosansLight.otf')
 
- @font-face
+@font-face
    font-family Geo Sans
    font-style italic
    src url('~/public/GeosansLight-Oblique.otf')
    
- @font-face
+@font-face
    font-family Typewriter Condensed
    font-style normal
    src url('~/public/TypewriterCondensed.otf')
 
- @font-face
+@font-face
    font-family Typewriter Condensed
    font-style bold
    src url('~/public/TypewriterCondensed-Bold.otf')
@@ -56,199 +95,239 @@ color-accent-2 = rgb(233,128,116)
 
 // Helpers
 
-.color-accent-1 {
-    color: color-accent-1 !important
+.color-primary {
+    color: color-primary !important
 }
 
-.color-accent-2 {
-    color: color-accent-2 !important
+.color-secondary {
+    color: color-secondary !important
 }
 
-.color-tertiary {
-    color: color-tertiary !important
+.color-accent {
+    color: color-accent !important
 }
+
+.color-error {
+    color: color-error !important
+}
+
+.color-warning {
+    color: color-warning !important
+}
+
+.color-success {
+    color: color-success !important
+}
+
+.color-info {
+    color: color-info !important
+}
+
 
 // Styling
 
 body {
     .application {
-        font-family: body-font, sans-serif
-        font-size: 1.25rem
-    
         a {
-            color: color-accent-1
+            color: color-accent
             text-decoration: none
             
             &:hover,
             &:focus,
             &:active {
-                color: color-accent-2
+                color: color-warning
             }
         }
-    }
-    
-    .header-type {
-        font-family: header-font, sans-serif
-        color: dark-color-secondary
-        text-transform: uppercase
         
-        &.light {
-            color: light-color-secondary
+        .display-3, .display-2, .display-1 {
+            text-transform: uppercase
+            white-space: nowrap
+            color: dark-color-secondary
+            
+            &.light {
+                color: light-color-secondary
+            }
         }
-    }
-    
-    .subheader-type {
-        font-family: body-font, sans-serif
-        font-style: italic
-        font-weight: 300
-        color: dark-color-tertiary
         
-        &.light {
-            color: light-color-tertiary
-        }
-    }
-    
-    .title-type {
-        font-style: italic
-        color: dark-color-secondary
-        line-height: 1.5 !important
-        
-        &.light {
-            color: light-color-secondary
+        .title, .subheading {
+            font-style: italic
+            color: dark-color-tertiary
+            
+            &.light {
+                color: light-color-tertiary
+            }
         }
     }
 }
 
 .application {
-    &.theme--light {
+    &.theme--dark {
         background: transparent
     }
     
-    #navigation {
-        .btn--floating {
-            border-radius: 2px
-        }
-    }
+    // #navigation {
+    //     .btn--floating {
+    //         border-radius: 2px
+    //     }
+    // }
     
     #hero {
-        height: 100vh !important
+        height: 100vh
         
         .hero {
             height: 100%
             overflow: hidden
             position: relative
-            
-            .layer {
-                background-size: contain
-                background-repeat: no-repeat
-                background-position: bottom
-                width: 100%
-                height: 100%
-                position: fixed
-                z-index: -1
-
-                &-01 {
-                    background-color: color-primary
-                    background-size: 100% auto
-                }
-                &-02 {
-                    opacity: 0.7
-                }
-                &-03 {
-                    opacity: 0.8
-                }
-                &-04 {
-                    opacity: 0.9
-                }
-            }
         }
         
         .hero-mobile {
-            display: none
+            display: block
+            background-color: color-primary
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: bottom
+            width: 100%
+            height: 100%
+            position: fixed
+            z-index: -1
         }
         
         .hero-header {
             position: relative
-            left: 45%
             right: 0
-            padding: 6rem 3rem 0
+            padding: 5rem 3rem 0
             background-color: alpha(color-primary, 0.8)
-            width: 37%
             height: 100%
             
-            .subheader-type {
-                color: light-color-primary
-                font-style: normal
-                font-size: 10rem
-                font-weight: 700
-                letter-spacing: 5px
-                line-height: 1
-                white-space: nowrap
+            .display-3 {
+                margin: 1rem 0
             }
             
-            .header-type {
-                padding: 1rem 0
-                color: light-color-secondary
-                font-size: 4rem
-                letter-spacing: -1px
-                line-height: 1.15
-                white-space: nowrap
+            .display-2 {
+                margin-bottom: 1rem
+                font-family: body-font-family !important
+                font-style: italic
+                text-transform: none
             }
             
-            .title-type {
-                padding-bottom: 1rem
-                font-size: 2rem
-                font-weight: 400
-                letter-spacing: 1px
-                white-space: nowrap
-            }
-            
-            .btn {
+            .v-btn {
                 position: absolute
                 bottom: 0
                 left: 45%
             }
         }
         
-        @media screen and (max-width: 1263px) {
-            .hero-header {
-                left: 40%
-                width: 43%
-            }
-        }
-        @media screen and (max-width: 959px) {
+        +sizephone() {
             .hero .layer {
                 display: none
             }
-            .hero-mobile {
-                display: block
-                background-color: color-primary
-                background-size: contain
-                background-repeat: no-repeat
-                background-position: bottom
-                width: 100%
-                height: 100%
-                position: fixed
-                z-index: -1
-            }
-            .hero-header {
-                left: 15%
-                width: 70%
-            }
-        }
-        @media screen and (max-width: 600px) {
+            
             .hero-header {
                 left: 10%
                 width: 80%
                 
-                .subheader-type {
-                    font-size: 8rem
+                .display-4 {
+                    font-size: 5rem !important
                 }
-                .header-type {
-                    font-size: 3rem
+                
+                .display-3 {
+                    font-size: 2rem !important
+                    letter-spacing: 0 !important
                 }
-                .title-type {
-                    font-size: 2rem
+                
+                .display-2 {
+                    font-size: 1.25rem !important
+                }
+            }
+        }
+        
+        +sizetabletp() {
+            .hero-header {
+                left: 15%
+                width: 70%
+                
+                .display-4 {
+                    font-size: 7rem !important
+                }
+                
+                .display-3 {
+                    font-size: 3.5rem !important
+                    letter-spacing: -0.25rem !important
+                }
+                
+                .display-2 {
+                    font-size: 2rem !important
+                }
+            }
+        }
+        
+        +sizetabletl() {
+            .hero {
+                .layer {
+                    background-size: contain
+                    background-repeat: no-repeat
+                    background-position: bottom
+                    width: 100%
+                    height: 100%
+                    position: fixed
+                    z-index: -1
+
+                    &-01 {
+                        background-color: color-primary
+                        background-size: 100% auto
+                    }
+                    &-02 {
+                        opacity: 0.7
+                    }
+                    &-03 {
+                        opacity: 0.8
+                    }
+                    &-04 {
+                        opacity: 0.9
+                    }
+                }
+            }
+            
+            .hero-mobile {
+                display: none
+            }
+            
+            .hero-header {
+                left: 15%
+                width: 70%
+                
+                .display-4 {
+                    font-size: 7.5rem !important
+                }
+            }
+        }
+        
+        +sizedesktop() {
+            .hero-header {
+                left: 40%
+                width: 43%
+                
+                .display-3 {
+                    font-size: 3.5rem !important
+                }
+            }
+        }
+        
+        +sizexldesktop() {
+            .hero-header {
+                left: 45%
+                width: 45%
+                
+                .display-4 {
+                    font-size: 12rem !important
+                }
+                
+                .display-3 {
+                    font-size: 5rem !important
+                }
+                
+                .display-2 {
+                    font-size: 3rem !important
                 }
             }
         }
@@ -261,73 +340,168 @@ body {
     }
     
     #skills {
-        background-color: color-tertiary
+        background-color: color-error
         align-items: stretch
         
-        .parallax {
+        .v-parallax {
             overflow: visible
             height: auto !important
             padding-bottom: 2rem
             
-            .parallax__image {
+            .v-parallax__image {
                 opacity: 0.25 !important
-                min-height: auto
             }
-            @media screen and (max-width: 1263px) {
-                .parallax__image {
-                    display: none !important
-                }
-            }
+            
+            // +sizetabletp() {
+            //     .v-parallax__image {
+            //         display: none
+            //     }
+            // }
+            // +sizedesktop() {
+            //     .v-parallax__image {
+            //         display: block
+            //     }
+            // }
         }
         
         .skills-container {
             margin-top: -6rem
         }
         
-        .card {
+        .flex > .flex {
+            padding: 0
+            
+        }
+        
+        .flex > .flex:last-child {
+            padding-top: 1.5rem
+        }
+        
+        .v-card {
             height: 100% !important
             padding: 3rem 2rem
             
-            .card__title {
+            .v-card__title {
                 padding: 0
                 margin: 0
                 display: block
             }
             
-            .card__text {
+            .v-card__text {
                 padding: 0.5rem 0
             }
         
             .skill-icon {
                 height: 72px
                 width: 100%
-                fill: color-tertiary
+                fill: color-error
             }
         }
         
-        .design-barchart {
-            padding-top: 1.5rem
-            padding-right: 0.5rem
+        .code-bar-chart-legend {
+            padding: 0
+            height: 0
+            font-family: header-font-family
+            text-transform: uppercase
+            position: relative
+            top: -70px
+            
+            li {
+                list-style: none
+                text-align: right
+            }
         }
     }
     
     #works {
-        display: none //remove later
-        background: color-accent-1
+        background: color-accent
         color: light-color-primary
+        display: none //remove later
+        
+        .lightbox {
+            position: fixed
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background: dark-color-secondary
+            width: 100%
+            height: 100%
+            z-index: 1
+        }
+        .lightbox__thumbnail {
+            display: block
+        }
+        .lightbox__thumbnail img {
+            width: 100%
+            height: 100%
+        }
+        .lightbox__close {
+            position: fixed
+            right: 0
+            top: 0
+            padding: 1rem
+            font-size: 1.5rem
+            cursor: pointer
+            color: light-color-primary
+            font-weight: 700
+            width: 4rem
+            height: 4rem
+        }
+        .lightbox__arrow--invisible {
+            visibility: hidden
+        }
+        .lightbox__element {
+            height: 100%
+            width: 100%
+        }
+        .lightbox__arrow {
+            padding: 0 2rem
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+        }
+        .lightbox__arrow svg {
+            fill: light-color-primary
+            pointer-events: none
+        }
+        .lightbox__image {
+            flex: 1
+        }
+        .lightbox__image img {
+            max-height: 100vh
+            max-width: 100%
+            display: block
+            margin: auto
+        }
+        @media screen and (max-width: 720px) {
+            .lightbox__arrow {
+                padding: 0 1rem
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .lightbox__element {
+                position: relative
+            }
+            .lightbox__arrow {
+                position: absolute
+                padding: 0 2rem
+                height: 100%
+            }
+            .lightbox__arrow--right {
+                right: 0
+                background: linear-gradient(to right, transparent, dark-color-tertiary)
+            }
+            .lightbox__arrow--left {
+                left: 0
+                background: linear-gradient(to left, transparent, dark-color-tertiary)
+            }
+        }
     }
     
     #about {
         background: light-color-primary
-        // background: color-tertiary
         align-items: stretch
-        
-        .parallax {
-            height: 100% !important
-        }
-        
-        #horizontalbar-chart {
-            transition: background-color 0.2s ease-in-out
-        }
     }
 }

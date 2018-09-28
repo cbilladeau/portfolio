@@ -1,7 +1,9 @@
 import Chart from 'chart.js'
 import { generateChart } from 'vue-chartjs'
 
-Chart.defaults.customRadar = Chart.defaults.radar;
+require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
+
+Chart.defaults.customRadar = Chart.defaults.radar
 Chart.controllers.customRadar = Chart.controllers.radar.extend({})
 
 const CustomRadar = generateChart('custom-radar', 'customRadar')

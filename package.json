@@ -11,24 +11,26 @@
   "dependencies": {
     "chart.js": "^2.7.2",
     "chartjs-plugin-datalabels": "^0.3.0",
-    "vue": "^2.5.3",
-    "vue-chartjs": "^3.3.1",
-    "vuetify": "^1.0.0"
+    "vue": "^2.5.17",
+    "vue-chartjs": "^3.4.0",
+    "vue-pure-lightbox": "^2.1.5",
+    "vuetify": "^1.1.9"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-imports": "^1.5.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
-    "cross-env": "^5.0.5",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.4",
     "style-loader": "^0.13.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.5.3",
+    "vue-loader": "^13.7.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^2.11.1"
   }
 }
