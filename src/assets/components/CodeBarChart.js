@@ -1,37 +1,56 @@
-import {HorizontalBar} from 'vue-chartjs'
+import Chart from 'chart.js'
+import { generateChart } from 'vue-chartjs'
 
 require('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')
 
+Chart.defaults.customBar = Chart.defaults.horizontalBar
+Chart.controllers.customBar = Chart.controllers.horizontalBar.extend({
+    draw: function(ease) {
+        Chart.controllers.horizontalBar.prototype.draw.call(this, ease)
+
+        var ctx = this.chart.chart.ctx
+        ctx.globalCompositeOperation = 'destination-over'
+    }
+})
+
+const CustomBar = generateChart('custom-bar', 'customBar')
+
 export default {
-    extends: HorizontalBar,
-    mounted () {
-        this.gradient = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 150, 0);
-        this.gradient.addColorStop(0, 'rgba(68, 49, 141, 0.9)');
-        this.gradient.addColorStop(1, 'rgba(216, 63 , 135, 0.80)');
-
-        this.gradientHover = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 150, 0);
-        this.gradientHover.addColorStop(0, 'rgba(68, 49, 141, 1)');
-        this.gradientHover.addColorStop(1, 'rgba(216, 63 , 135, 1)');
-
+    extends: CustomBar,
+    mounted() {
         this.addPlugin({
             id: 'chartjs-plugin-datalabels'
         })
         this.renderChart({
-            labels: ['HTML5', 'CSS', 'Wordpress', 'SASS, LESS, Stylus', 'JS', 'jQuery', 'VueJS', 'PHP'],
+            labels: ['HTML5', 'CSS', 'Wordpress', 'SASS & Stylus', 'JS', 'jQuery', 'VueJS', 'PHP'],
             datasets: [{
-                backgroundColor: 'rgba(68, 49, 141, 0.9)',
+                backgroundColor: 'rgba(68, 49, 141, 1)',
                 hoverBackgroundColor: 'rgba(68, 49, 141, 1)',
-                label: '# of Years',
-                //yAxisID: 'years-axis',
+                label: 'Years',
                 data: [5, 5, 5, 2, 2, 3, 1, 2],
                 datalabels: {
-                    display: false
+                    display: true,
+                    font: {
+                        family: 'Geo Sans, sans-serif',
+                        size: 16
+                    },
+                    padding: {
+                        left: 0,
+                        right: 10,
+                        top: 0,
+                        bottom: 0
+                    },
+                    color: 'rgba(0, 0, 0, 0.87)',
+                    anchor: 'start',
+                    align: 'left',
+                    formatter: function(value, context) {
+                        return context.chart.data.labels[context.dataIndex]
+                    }
                 }
             }, {
-                backgroundColor: 'rgba(216, 63 , 135, 0.80)',
+                backgroundColor: 'rgba(216, 63 , 135, 1)',
                 hoverBackgroundColor: 'rgba(216, 63 , 135, 1)',
-                label: '# of Projects',
-                //yAxisID: 'projects-axis',
+                label: 'Projects',
                 data: [7, 7, 4, 5, 3, 3, 2, 1],
                 datalabels: {
                     display: false
@@ -40,7 +59,7 @@ export default {
         }, {
             scales: {
                 yAxes: [{
-                    barPercentage: 0.7,
+                    barPercentage: 0.4,
                     categoryPercentage: 1,
                     stacked: true,
                     ticks: {
@@ -54,13 +73,10 @@ export default {
                 xAxes: [{
                     stacked: true,
                     ticks: {
-                        display: true,
+                        display: false,
                         stepSize: 1,
                         min: 0,
                         max: 12,
-                    },
-                    pointLabel: {
-                        display: true
                     },
                     gridLines: {
                         display: true,
@@ -71,8 +87,16 @@ export default {
                     }
                 }]
             },
+            layout: {
+                padding: {
+                    left: 90,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            },
             legend: {
-                display: true
+                display: false
             },
             title: {
                 display: false

@@ -95,16 +95,32 @@ sizexldesktop()
 
 // Helpers
 
+.color-primary {
+    color: color-primary !important
+}
+
+.color-secondary {
+    color: color-secondary !important
+}
+
 .color-accent {
     color: color-accent !important
+}
+
+.color-error {
+    color: color-error !important
 }
 
 .color-warning {
     color: color-warning !important
 }
 
-.color-error {
-    color: color-error !important
+.color-success {
+    color: color-success !important
+}
+
+.color-info {
+    color: color-info !important
 }
 
 
@@ -334,17 +350,31 @@ body {
             
             .v-parallax__image {
                 opacity: 0.25 !important
-                min-height: auto
             }
-            @media screen and (max-width: 1263px) {
-                .v-parallax__image {
-                    display: none !important
-                }
-            }
+            
+            // +sizetabletp() {
+            //     .v-parallax__image {
+            //         display: none
+            //     }
+            // }
+            // +sizedesktop() {
+            //     .v-parallax__image {
+            //         display: block
+            //     }
+            // }
         }
         
         .skills-container {
             margin-top: -6rem
+        }
+        
+        .flex > .flex {
+            padding: 0
+            
+        }
+        
+        .flex > .flex:last-child {
+            padding-top: 1.5rem
         }
         
         .v-card {
@@ -368,16 +398,25 @@ body {
             }
         }
         
-        .code-bar-chart {
-            padding-top: 0.5rem
-            padding-right: 0.75rem
-            min-height: 250px
+        .code-bar-chart-legend {
+            padding: 0
+            height: 0
+            font-family: header-font-family
+            text-transform: uppercase
+            position: relative
+            top: -70px
+            
+            li {
+                list-style: none
+                text-align: right
+            }
         }
     }
     
     #works {
         background: color-accent
         color: light-color-primary
+        display: none //remove later
         
         .lightbox {
             position: fixed
