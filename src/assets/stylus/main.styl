@@ -176,6 +176,10 @@ body {
             height: 100%
             overflow: hidden
             position: relative
+            
+            .layer {
+                will-change: transform
+            }
         }
         
         .hero-mobile {
@@ -348,6 +352,7 @@ body {
             
             .v-parallax__image {
                 opacity: 0.25 !important
+                will-change: transform
             }
             
             // +sizetabletp() {
@@ -387,6 +392,10 @@ body {
             
             .v-card__text {
                 padding: 0.5rem 0
+                
+                .display-1 {
+                    margin-bottom: 0.5rem
+                }
             }
         
             .skill-icon {

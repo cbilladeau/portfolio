@@ -22,12 +22,12 @@ export default {
             id: 'chartjs-plugin-datalabels'
         })
         this.renderChart({
-            labels: ['HTML5', 'CSS', 'Wordpress', 'SASS & Stylus', 'JS', 'jQuery', 'VueJS', 'PHP'],
+            labels: ['HTML5', 'CSS', 'Wordpress', 'SASS & Stylus', 'JS', 'jQuery', 'VueJS', 'PHP', 'Laravel'],
             datasets: [{
                 backgroundColor: 'rgba(68, 49, 141, 1)',
                 hoverBackgroundColor: 'rgba(68, 49, 141, 1)',
                 label: 'Years',
-                data: [5, 5, 5, 2, 2, 3, 1, 2],
+                data: [5, 5, 5, 3, 4, 4, 1, 3, 1],
                 datalabels: {
                     display: true,
                     font: {
@@ -51,7 +51,7 @@ export default {
                 backgroundColor: 'rgba(216, 63 , 135, 1)',
                 hoverBackgroundColor: 'rgba(216, 63 , 135, 1)',
                 label: 'Projects',
-                data: [7, 7, 4, 5, 3, 3, 2, 1],
+                data: [10, 10, 8, 8, 7, 7, 2, 5, 1],
                 datalabels: {
                     display: false
                 }

@@ -26,11 +26,11 @@
                                         <v-card light class="elevation-8">
                                             <v-card-title primary-title class="layout justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/public/code.svg#icon"></use>
+                                                    <use href="/public/code.svg#icon"></use>
                                                 </svg>
                                                 <v-card-text class="text-xs-center">
                                                     <h4 class="display-1">Frontend Development</h4>
-                                                    <div>I prioritize writing accessible, optimized code for fast load times & accessibility for all users.</div>
+                                                    <div>I write clean, future-proof code priortizing accessbility, responsiveness & dyamicism.</div>
                                                 </v-card-text>
                                             </v-card-title>
                                             <v-card-text>
@@ -42,11 +42,11 @@
                                             </v-card-text>
                                             <v-card-text>
                                                 <div class="title">CMS & Frameworks</div>
-                                                <div>Wordpress, Bootstrap, Material Design</div>
+                                                <div>Wordpress, Laravel, Foundation, Bootstrap, Material Design</div>
                                             </v-card-text>
                                             <v-card-text>
                                                 <div class="title">Tools</div>
-                                                <div>WGAC/W3C, Git, Github, Terminal, Homebrew, npm & Yarn, Grunt & Gulp, Webpack & Encore, Agile Development, JIRA, Confluence</div>
+                                                <div>WGAC/W3C & A11Y, Git, Terminal, Homebrew, Node & Yarn, Grunt & Gulp, Webpack & Encore, Agile Development</div>
                                             </v-card-text>
                                         </v-card>
                                     </v-flex>
@@ -55,11 +55,11 @@
                                             <v-card light class="elevation-8">
                                                 <v-card-title primary-title class="layout justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/public/pencil-ruler.svg#icon"></use>
+                                                        <use href="/public/pencil-ruler.svg#icon"></use>
                                                     </svg>
                                                     <v-card-text class="text-xs-center">
                                                         <h4 class="display-1">UI Design</h4>
-                                                        <div>I design dynamic, responsive-first web apps that put the user experience front & center.</div>
+                                                        <div>I design web apps that put the user experience front & center.  Making accessible-first work matters.</div>
                                                     </v-card-text>
                                                 </v-card-title>
                                                 <v-card-text>
@@ -68,7 +68,7 @@
                                                 </v-card-text>
                                                 <v-card-text>
                                                     <div class="title">Tools</div>
-                                                    <div>UXPin, Axure, Photoshop, Illustrator, InDesign</div>
+                                                    <div>Sketch, UXPin, Axure, Photoshop, Illustrator, InDesign, XD</div>
                                                 </v-card-text>
                                             </v-card>
                                         </v-flex>
@@ -76,7 +76,7 @@
                                             <v-card light class="elevation-8">
                                                 <v-card-title primary-title class="layout justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/public/joystick.svg#icon"></use>
+                                                        <use href="/public/joystick.svg#icon"></use>
                                                     </svg>
                                                     <v-card-text class="text-xs-center">
                                                         <h4 class="display-1">Game Development</h4>
@@ -130,8 +130,8 @@
                                 <radar-chart :height="175" />
                             </v-flex>
                             <v-flex xs12 md8 class="my-4">
-                                <div class="pb-1">Developer & designer by day, illustrator & powerlifter by night.  I'm currently the frontend developer & UI designer at an international nonprofit, working primarily in Wordpress & frameworks like VueJS.</div>
-                                <div class="py-1">When I was a kid, I wanted to be an astronomer when I grew up, until I realized how much math was involved.  So I went to art school.  Then got into programming.  Go figure.</div>
+                                <div class="pb-1">Developer & designer by day, illustrator & powerlifter by night.  I'm currently a frontend developer at an advertising agency based in Chicago, working primarily in Wordpress, Laravel & VueJS.</div>
+                                <div class="py-1">When I was a kid, I wanted to be an astronomer when I grew up, until I realized how much math was involved.  So I went to art school, then got into programming.  Go figure.</div>
                                 <div class="pt-3"><em>This portfolio is a work in progress. For resume, samples & more information, contact me:</em></div>
                                 <v-list two-line light class="transparent">
                                     <v-list-tile>
@@ -153,7 +153,7 @@
                 <v-layout row wrap align-center>
                     <v-flex xs12>
                         <div class="ml-3">
-                            &copy; 2018
+                            &copy; 2019
                         </div>
                     </v-flex>
                 </v-layout>

@@ -32,7 +32,7 @@
                     data-depth="0.50"
                 >
                     <h1 class="display-4">Hi<span class="color-accent">,</span><br />I'm<br />Cour<span class="color-error">.</span></h1>
-                    <h2 class="display-3 light">UI Designer<br />& Frontend Dev</h2>
+                    <h2 class="display-3 light">Frontend Dev<br />& UI Designer</h2>
                     <div class="display-2 light">Located in Chicago, IL</div>
                 </div>
                 <div class="text-xs-center">
