@@ -26,7 +26,7 @@
                                         <v-card light class="elevation-8">
                                             <v-card-title primary-title class="layout justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/code.svg#icon"></use>
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/public/code.svg#icon"></use>
                                                 </svg>
                                                 <v-card-text class="text-xs-center">
                                                     <h4 class="display-1">Frontend Development</h4>
@@ -56,7 +56,7 @@
                                             <v-card light class="elevation-8">
                                                 <v-card-title primary-title class="layout justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/pencil-ruler.svg#icon"></use>
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/public/pencil-ruler.svg#icon"></use>
                                                     </svg>
                                                     <v-card-text class="text-xs-center">
                                                         <h4 class="display-1">UI Design</h4>
@@ -77,7 +77,7 @@
                                             <v-card light class="elevation-8">
                                                 <v-card-title primary-title class="layout justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="skill-icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./public/joystick.svg#icon"></use>
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/public/joystick.svg#icon"></use>
                                                     </svg>
                                                     <v-card-text class="text-xs-center">
                                                         <h4 class="display-1">Game Development</h4>
