@@ -163,7 +163,7 @@
 </template>
 
 <script>
-    import Navigation from './assets/components/Navigation.vue'
+    //import Navigation from './assets/components/Navigation.vue'
     import CodeBarChart from './assets/components/CodeBarChart.js'
     import RadarChart from './assets/components/RadarChart.js'
     import Parallax from './assets/components/Parallax.vue'
@@ -172,7 +172,7 @@
     export default {
         name: 'app',
         components: {
-            Navigation,
+            //Navigation,
             CodeBarChart,
             RadarChart,
             Parallax,

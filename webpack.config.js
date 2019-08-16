@@ -22,11 +22,14 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {}
-        }
       },
       {
         test: /\.js$/,
@@ -49,11 +52,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader']
+        loader: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader' ]
       },
       {
         test: /\.styl$/,
-        loader: ['style-loader', 'css-loader', 'stylus-loader']
+        loader: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader', 'stylus-loader' ]
       }
     ]
   },
@@ -65,18 +70,4 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
 }
