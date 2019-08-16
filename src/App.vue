@@ -34,7 +34,6 @@
                                                 </v-card-text>
                                             </v-card-title>
                                             <v-card-text>
-                                                <!-- <div class="title">Languages</div> -->
                                                 <code-bar-chart class="code-bar-chart" />
                                                 <ul class="code-bar-chart-legend">
                                                     <li class="color-secondary"># of Years</li>
@@ -125,7 +124,6 @@
                             <v-flex xs12>
                                 <div class="text-xs-center">
                                     <h3 class="display-2">Who I Am</h3>
-                                    <!-- <div class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div> -->
                                 </div>
                             </v-flex>
                             <v-flex xs12 md4 class="my-4">
@@ -166,9 +164,7 @@
 
 <script>
     import Navigation from './assets/components/Navigation.vue'
-    //import PieChart from './assets/components/PieChart.js'
     import CodeBarChart from './assets/components/CodeBarChart.js'
-    //import DesignBarChart from './assets/components/DesignBarChart.js'
     import RadarChart from './assets/components/RadarChart.js'
     import Parallax from './assets/components/Parallax.vue'
     import Gallery from './assets/components/Gallery.vue'
@@ -177,19 +173,10 @@
         name: 'app',
         components: {
             Navigation,
-            //PieChart,
             CodeBarChart,
-            //DesignBarChart,
             RadarChart,
             Parallax,
             Gallery
-        },
-        data () {
-            return {
-                options: {
-                    //licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
-                }
-            }
         }
     }
 </script>
